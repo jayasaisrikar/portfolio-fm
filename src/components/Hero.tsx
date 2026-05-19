@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 function Lightsaber() {
   return (
-    <div className="absolute top-1/2 left-3/4 -translate-y-1/2 -rotate-12 h-screen w-[100px] flex flex-col justify-center items-center z-0 pointer-events-none opacity-40 mix-blend-screen scale-150 origin-center">
+    <div className="absolute top-1/2 left-1/2 md:left-3/4 -translate-y-1/2 -rotate-12 h-screen w-[100px] flex flex-col justify-center items-center z-0 pointer-events-none opacity-40 mix-blend-screen scale-150 origin-center">
       {/* Blade */}
       <motion.div
         initial={{ height: 0, opacity: 0 }}
