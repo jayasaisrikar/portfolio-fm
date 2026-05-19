@@ -111,6 +111,15 @@ export default function Hero() {
               <p className="text-[11px] leading-relaxed text-white/60 tracking-wide">
                 I build production-grade multi-agent systems, AI-powered platforms, scalable data pipelines, and Web3 infrastructure — wallets, DeFi arbitrage, and on-chain automation. Founding Engineer at <span className="text-white">Blocksbridge Consulting</span>.
               </p>
+              <a
+                href="https://wayflo.jayasaisrikar.xyz"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-[9px] font-bold tracking-widest uppercase text-[#E0FF00] hover:opacity-70 transition-opacity"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E0FF00] animate-pulse" />
+                wayflo.jayasaisrikar.xyz — live now
+              </a>
             </div>
             <div className="hidden md:block h-[1px] w-24 bg-white/20 mt-3"></div>
             <div className="flex flex-col gap-2 pt-4 md:pt-0 w-full md:w-auto">

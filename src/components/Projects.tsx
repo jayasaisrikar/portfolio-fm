@@ -4,55 +4,86 @@ import { useState, useEffect } from 'react';
 
 const projects = [
   {
+    id: "wayflo",
+    title: "Wayflo",
+    badge: "PRODUCTION · LIVE",
+    description: "AI travel planner that connects real destinations, trip windows, budgets & pace into calm, reusable itineraries.",
+    fullDescription: "Wayflo is a production-grade AI-powered travel planning platform. It lets users search live destinations, anchor trips around real arrival/departure windows, shape plans around an actual budget, and keep the itinerary, map view, and trip notes together so the plan stays usable after you close the tab. Built with a focus on calm UX — minimal inputs, smart timing, and route flow that doesn't feel like paperwork.",
+    tech: ["Next.js", "TypeScript", "AI", "Maps API", "Supabase"],
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop",
+    demoLink: "https://wayflo.jayasaisrikar.xyz",
+    repoLink: "https://wayflo.jayasaisrikar.xyz"
+  },
+  {
     id: "onchain-agent",
     title: "On-Chain Analysis Agent",
     award: "Winner – MCP Track, ADK-TS Hackathon",
-    description: "Production-grade multi-agent AI system in TypeScript for automated Web3 and cryptocurrency analysis.",
-    fullDescription: "A comprehensive multi-agent system built to analyze Web3 on-chain data in real-time. It integrates with CoinGecko and various blockchain explorers to provide deep insights, anomaly detection, and automated trading signals. The system utilizes advanced LLM orchestration via the IQAI ADK to maintain memory across sessions and ensure fault-tolerant pipelines.",
-    tech: ["TypeScript", "LLM", "CoinGecko API", "IQAI ADK"],
+    description: "Production-grade multi-agent AI system for automated Web3 & cryptocurrency analysis with real-time market data.",
+    fullDescription: "A comprehensive multi-agent system built to analyze Web3 on-chain data in real-time. Four specialized sub-agents run in parallel gathering token data, market metrics, and web intelligence. The root agent orchestrates research and analysis phases via the IQAI ADK, synthesising results into structured markdown reports with risk assessments and investment recommendations. Integrates CoinGecko and Tavily Search APIs.",
+    tech: ["TypeScript", "Next.js", "IQAI ADK", "CoinGecko API", "Tavily API"],
     image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop",
-    demoLink: "#",
-    repoLink: "https://github.com"
+    demoLink: "https://onchain-analysis-agent.vercel.app/",
+    repoLink: "https://github.com/jayasaisrikar"
+  },
+  {
+    id: "otc-voice",
+    title: "OTC Voice Assistant",
+    description: "Voice-activated OTC trading system spanning OKX, Bybit, Deribit & Binance with real-time WebSocket updates.",
+    fullDescription: "A production-ready voice-activated trading assistant that handles complete OTC order flow through natural conversation. Supports OKX, Bybit, Deribit, and Binance APIs with live price feeds. Features contextual re-prompting for incomplete inputs, natural correction handling, visual progress indicators, robust error handling for API failures, and a beautiful real-time UI powered by WebSockets.",
+    tech: ["TypeScript", "WebSockets", "OKX API", "Bybit API", "Deribit API", "Binance API"],
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
+    demoLink: "https://github.com/jayasaisrikar/otc-voice-assistant",
+    repoLink: "https://github.com/jayasaisrikar/otc-voice-assistant"
   },
   {
     id: "code-architect",
     title: "AI Code Architecture Agent",
-    description: "AI-powered tool for automated analysis and interactive visualization of GitHub repositories, streamlining codebase understanding.",
-    fullDescription: "Developed an AI-powered tool that automatically ingests GitHub repositories, analyzes their folder structures, and renders interactive architectural diagrams using Mermaid.js. It features multi-model fallback between OpenAI and Gemini to ensure robust insights and Q&A over the codebase.",
+    description: "AI-powered tool for automated analysis and interactive visualization of GitHub repositories.",
+    fullDescription: "Developed an AI-powered tool (SPoC) that automatically ingests GitHub repositories or ZIP uploads, analyzes their folder structures, and enables natural language Q&A over the codebase. It provides architecture suggestions, feature placement guidance, and interactive diagrams. Features multi-model fallback between OpenAI and Gemini for robust insights.",
     tech: ["Python", "FastAPI", "React", "Gemini API", "SQLite"],
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
-    demoLink: "#",
-    repoLink: "https://github.com"
+    demoLink: "https://spoc-agent.vercel.app/",
+    repoLink: "https://github.com/jayasaisrikar"
   },
   {
     id: "face-recog",
-    title: "Face Recognition System",
-    description: "Comprehensive attendance system with authentication, role-based access, and facial recognition with real-time tracking.",
-    fullDescription: "A seamless access control and attendance management system leveraging edge-based facial recognition APIs. Includes a robust Django backend with role-based access control (RBAC), real-time monitoring dashboards, and exportable analytics for administrators.",
-    tech: ["Python", "Django", "Face Recognition APIs"],
+    title: "Face Recognition Attendance",
+    description: "Comprehensive attendance system with authentication, role-based access, and real-time facial recognition.",
+    fullDescription: "A seamless access control and attendance management system leveraging edge-based facial recognition. Includes a robust Django backend with role-based access control (RBAC), real-time monitoring dashboards, and exportable analytics for administrators. Supports multi-camera input and handles liveness detection.",
+    tech: ["Python", "Django", "OpenCV", "Face Recognition API"],
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-    demoLink: "#",
-    repoLink: "https://github.com"
+    demoLink: "https://github.com/jayasaisrikar/student_attendance",
+    repoLink: "https://github.com/jayasaisrikar/student_attendance"
   },
   {
     id: "gemini-chat",
     title: "Gemini AI Chatbot",
-    description: "Built AI chatbot with dashboard for product/article input using Web scraping context injection.",
-    fullDescription: "A versatile conversational agent powered by Gemini AI with custom web-scraping capabilities. Users can input product URLs or articles, and the system uses BeautifulSoup to scrape, clean, and inject the context directly into the LLM prompt, enabling highly specific, context-aware responses.",
-    tech: ["Python", "Gemini AI", "BeautifulSoup"],
+    description: "AI chatbot with dashboard for product/article context injection via live web scraping.",
+    fullDescription: "A versatile conversational agent powered by Gemini AI with custom web-scraping capabilities. Users can input product URLs or articles, and the system uses BeautifulSoup to scrape, clean, and inject the context directly into the LLM prompt, enabling highly specific, context-aware responses beyond the model's training data.",
+    tech: ["Python", "Gemini AI", "BeautifulSoup", "FastAPI"],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
-    demoLink: "#",
-    repoLink: "https://github.com"
+    demoLink: "https://github.com/jayasaisrikar/chatbot",
+    repoLink: "https://github.com/jayasaisrikar/chatbot"
   },
   {
     id: "finance-tracker",
     title: "Finance Tracker",
-    description: "JWT auth, OAuth2, real-time expense ratio monitoring, and financial health tips.",
-    fullDescription: "A comprehensive personal finance dashboard offering real-time expense ratio tracking, budget forecasting, and tailored financial advice. Built with FastAPI and Streamlit, it features seamless OAuth2 integration for securely linking banking data and Plotly for highly interactive data visualization.",
-    tech: ["FastAPI", "Streamlit", "Plotly"],
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
-    demoLink: "#",
-    repoLink: "https://github.com"
+    description: "JWT auth, OAuth2, real-time expense ratio monitoring, and financial health insights.",
+    fullDescription: "A comprehensive personal finance dashboard offering real-time expense ratio tracking, budget forecasting, and tailored financial advice. Built with FastAPI and Streamlit, it features seamless OAuth2 integration, JWT-secured endpoints, and Plotly for highly interactive data visualization. Tracks spending patterns and surfaces actionable insights.",
+    tech: ["FastAPI", "Streamlit", "Plotly", "OAuth2", "JWT"],
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop",
+    demoLink: "https://github.com/jayasaisrikar/finance-tracker",
+    repoLink: "https://github.com/jayasaisrikar/finance-tracker"
+  },
+  {
+    id: "ityukta",
+    title: "ITyukta 2K24",
+    description: "Official website for JNTUGV's annual tech fest — built for thousands of students and participants.",
+    fullDescription: "Designed and developed the official website for ITyukta 2K24, the annual technical festival of JNTU Vizianagaram. The site handled event registrations, schedule management, and real-time updates for thousands of student participants across multiple technical and non-technical events.",
+    tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop",
+    demoLink: "https://ityukta2k24.jntugv.in/",
+    repoLink: "https://github.com/jayasaisrikar"
   }
 ];
 
@@ -139,7 +170,7 @@ function ProjectCard({
       <div className="relative z-10 p-8 flex flex-col w-full h-full justify-between">
         <div className="flex justify-between items-start">
           <span className="text-[10px] font-mono tracking-widest px-3 py-1.5 rounded bg-black/50 backdrop-blur-md border border-white/10 uppercase">
-            0{index + 1} / {project.award ? 'AWARDED' : 'WORK'}
+            0{index + 1} / {project.badge ? project.badge : project.award ? 'AWARDED' : 'WORK'}
           </span>
           
           <motion.div 
@@ -176,9 +207,9 @@ function ProjectCard({
               initial="hidden"
               animate={isHovered ? "visible" : "hidden"}
             >
-              {project.award && (
+              {(project.award || project.badge) && (
                 <motion.div variants={fadeUpItem} className="text-[10px] text-[#E0FF00] uppercase tracking-widest mb-4">
-                  {project.award}
+                  {project.badge || project.award}
                 </motion.div>
               )}
 
@@ -299,10 +330,10 @@ export default function Projects() {
                   transition={{ delay: 0.2 }}
                   className="flex flex-col gap-8"
                 >
-                  {selectedProject.award && (
+                  {(selectedProject.award || selectedProject.badge) && (
                     <div className="inline-flex items-start">
                       <span className="text-[10px] uppercase tracking-widest border border-[#E0FF00]/50 text-[#E0FF00] px-3 py-1.5 bg-[#E0FF00]/10">
-                        {selectedProject.award}
+                        {selectedProject.badge || selectedProject.award}
                       </span>
                     </div>
                   )}
