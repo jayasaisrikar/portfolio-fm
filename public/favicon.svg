@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Rhombus -->
+  <path d="M16 0L32 16L16 32L0 16L16 0Z" fill="#E0FF00"/>
+  <!-- Inner Cutout -->
+  <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="#0A0A0A"/>
+  <!-- Core -->
+  <path d="M16 13L19 16L16 19L13 16L16 13Z" fill="#E0FF00"/>
+</svg>
