@@ -4,6 +4,7 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import VaderHelmet from '../components/VaderHelmet';
 import DeathStar from '../components/DeathStar';
 import { startLightsaberHum, stopLightsaberHum, playVaderBreath, initAudio } from '../lib/audio';
+import { useIsMobile } from '../lib/useIsMobile';
 
 // ─── SVG ICONS ────────────────────────────────────────────────────────────────
 const IconPin = () => (
@@ -182,8 +183,8 @@ function PlaceCard({ place, index }: { place: typeof PLACES[0]; index: number })
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   return (
     <motion.div ref={ref}
-      initial={{ opacity: 0, y: 60, filter: "blur(12px)" }}
-      animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: index * 0.12 }}
       onMouseEnter={startLightsaberHum}
       onMouseLeave={stopLightsaberHum}
@@ -209,8 +210,8 @@ function MovieCard({ movie, index }: { movie: typeof MOVIES[0]; index: number })
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   return (
     <motion.div ref={ref}
-      initial={{ opacity: 0, scale: 0.85, filter: "blur(10px)" }}
-      animate={isInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: index * 0.08 }}
       className="relative cursor-pointer w-full" onClick={() => setFlipped(f => !f)}
       onMouseEnter={startLightsaberHum}
@@ -253,21 +254,25 @@ function MovieCard({ movie, index }: { movie: typeof MOVIES[0]; index: number })
 
 export default function DetailedProfile() {
   const { scrollYProgress } = useScroll();
+  const isMobile = useIsMobile();
   
-  // Parallax transformations
-  const heroY = useTransform(scrollYProgress, [0, 0.2], [0, 150]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  // Parallax transformations - disabled on mobile for performance
+  const heroY = useTransform(scrollYProgress, [0, 0.2], isMobile ? [0, 0] : [0, 150]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.15], isMobile ? [1, 1] : [1, 0]);
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-  const aboutY = useTransform(scrollYProgress, [0.1, 0.4], [100, 0]);
+  const aboutY = useTransform(scrollYProgress, [0.1, 0.4], isMobile ? [0, 0] : [100, 0]);
   
+  const bgTextY = useTransform(scrollYProgress, [0.3, 0.6], isMobile ? [0, 0] : [100, -100]);
+
   const navigate = useNavigate();
 
   const { hash } = useLocation();
 
   useEffect(() => {
-    // Initial audio context prompt / interactions might be restricted by browser until click,
-    // but try to play anyway. The user likely clicked to get to this profile.
-    playVaderBreath();
+    // Only play audio on desktop - mobile audio context causes jank
+    if (!isMobile) {
+      playVaderBreath();
+    }
 
     if (hash) {
       setTimeout(() => {
@@ -412,12 +417,12 @@ export default function DetailedProfile() {
         </section>
 
         {/* ── WHO IS JAY ──────────────────────────────────────── */}
-        <section className="px-4 md:px-12 lg:px-16 py-16 md:py-40 relative overflow-hidden">
+        <section className="px-4 md:px-12 lg:px-16 py-16 md:py-24 relative overflow-hidden">
           <motion.div className="absolute top-0 left-6 right-6 md:left-12 md:right-12 h-[1px] bg-gradient-to-r from-transparent via-[#ff0000]/30 to-transparent origin-left"
             initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.5 }} />
           
           {/* Subtle background text for Parallax */}
-          <motion.div style={{ y: useTransform(scrollYProgress, [0.3, 0.6], [100, -100]) }} className="absolute top-40 left-10 pointer-events-none opacity-[0.12]">
+          <motion.div style={{ y: bgTextY }} className="absolute top-40 left-10 pointer-events-none opacity-[0.12]">
             <h2 className="text-[60px] sm:text-[100px] md:text-[250px] font-bold uppercase leading-none tracking-tighter text-transparent" style={{ WebkitTextStroke: "2px #00d4ff" }}>FORCE</h2>
             <h2 className="text-[60px] sm:text-[100px] md:text-[250px] font-bold uppercase leading-none tracking-tighter ml-8 sm:ml-16 md:ml-32 text-transparent" style={{ WebkitTextStroke: "2px #ff0000" }}>WIELDER</h2>
           </motion.div>
@@ -476,8 +481,8 @@ export default function DetailedProfile() {
           <motion.div className="absolute top-0 left-4 right-4 md:left-16 md:right-16 h-[1px] bg-gradient-to-r from-transparent via-[#00d4ff]/30 to-transparent"
             initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.5 }} />
           <div className="max-w-6xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 50, filter: "blur(10px)" }} whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.8 }} className="mb-16">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.8 }} className="mb-12">
               <span className="text-[10px] font-bold tracking-widest text-[#00d4ff] uppercase">Coordinates</span>
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold uppercase tracking-tight mt-4">
                 Systems <span className="text-[#00d4ff]">I've</span> Visited
@@ -495,7 +500,7 @@ export default function DetailedProfile() {
           <motion.div className="absolute top-0 left-4 right-4 md:left-16 md:right-16 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"
             initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.5 }} />
           <div className="max-w-6xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 50, filter: "blur(10px)" }} whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.8 }} className="mb-6">
               <span className="text-[10px] font-bold tracking-widest text-[#ff0000] uppercase">Holovids</span>
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold uppercase tracking-tight mt-4">

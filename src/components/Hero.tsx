@@ -105,7 +105,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col md:flex-row gap-8 md:gap-16 mt-12 items-start w-full"
+            className="flex flex-col md:flex-row gap-8 md:gap-16 mt-6 items-start w-full"
           >
             <div className="md:w-64">
               <p className="text-[11px] leading-relaxed text-white/60 tracking-wide">

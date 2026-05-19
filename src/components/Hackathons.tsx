@@ -6,7 +6,7 @@ export default function Hackathons() {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="hackathons" className="px-6 md:px-12 py-24 md:py-32 relative bg-white/[0.01]">
+    <section id="hackathons" className="px-6 md:px-12 py-16 md:py-24 relative bg-white/[0.01]">
       <div className="max-w-6xl mx-auto" ref={containerRef}>
         <motion.div
           initial={{ opacity: 0, y: 50, filter: 'blur(10px)' }}

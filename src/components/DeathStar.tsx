@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import { useIsMobile } from '../lib/useIsMobile';
 
 function DeathStarGeometry() {
   const groupRef = useRef<THREE.Group>(null);
@@ -110,6 +111,14 @@ function DeathStarGeometry() {
 }
 
 export default function DeathStar() {
+  const isMobile = useIsMobile();
+  if (isMobile) {
+    return (
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-radial-gradient" style={{ background: 'radial-gradient(ellipse at center, #00d4ff08 0%, transparent 70%)' }} />
+      </div>
+    );
+  }
   return (
     <div className="absolute inset-0 w-full h-full opacity-60 select-none z-0">
       <Canvas

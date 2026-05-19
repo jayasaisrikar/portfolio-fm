@@ -82,7 +82,7 @@ const ExperienceItem = ({ exp, index }: { exp: typeof experiences[0]; index: num
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="relative grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-16 group py-12 md:py-20 hover:bg-white/[0.02] transition-colors px-6 md:px-12 -mx-6 md:-mx-12 overflow-hidden"
+      className="relative grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-16 group py-8 md:py-14 hover:bg-white/[0.02] transition-colors px-6 md:px-12 -mx-6 md:-mx-12 overflow-hidden"
     >
       {/* Background Hover Glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#E0FF00]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
@@ -143,14 +143,14 @@ export default function Experience() {
   const pathLength = useTransform(smoothProgress, [0, 1], [0, 1]);
 
   return (
-    <section id="experience" className="px-6 md:px-12 py-24 md:py-32 relative">
+    <section id="experience" className="px-6 md:px-12 py-16 md:py-24 relative">
       <div className="max-w-6xl mx-auto" ref={containerRef}>
         <motion.div
           initial={{ opacity: 0, y: 50, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-          className="mb-24 flex flex-col items-center justify-center text-center gap-4 relative z-10"
+          className="mb-12 flex flex-col items-center justify-center text-center gap-4 relative z-10"
         >
           <span className="text-[10px] font-bold tracking-widest text-[#E0FF00] uppercase">Trajectory</span>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight">

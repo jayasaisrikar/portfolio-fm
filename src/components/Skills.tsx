@@ -25,8 +25,8 @@ const categories = [
 
 export default function Skills() {
   return (
-    <section className="px-6 md:px-12 py-24 md:py-32">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+    <section className="px-6 md:px-12 py-16 md:py-24">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

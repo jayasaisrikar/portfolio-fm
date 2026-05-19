@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useScroll, useTransform } from 'motion/react';
 import * as THREE from 'three';
 import { Float } from '@react-three/drei';
+import { useIsMobile } from '../lib/useIsMobile';
 
 function createDiceTexture(number: number) {
   const canvas = document.createElement('canvas');
@@ -199,9 +200,11 @@ function AnimatedShape() {
 }
 
 export default function ScrollBall() {
+  const isMobile = useIsMobile();
+  if (isMobile) return null;
   return (
     <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-40">
-      <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 10]} intensity={1} />
         <directionalLight position={[-10, -10, -10]} intensity={0.5} color="#E0FF00" />

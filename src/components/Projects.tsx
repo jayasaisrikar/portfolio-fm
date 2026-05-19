@@ -222,7 +222,7 @@ export default function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="projects" className="px-6 md:px-12 py-24 md:py-32 relative z-20 mix-blend-normal flex flex-col items-center">
+    <section id="projects" className="px-6 md:px-12 py-16 md:py-24 relative z-20 mix-blend-normal flex flex-col items-center">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

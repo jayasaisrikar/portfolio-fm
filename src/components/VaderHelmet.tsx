@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, Float, Stars } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import * as THREE from 'three';
+import { useIsMobile } from '../lib/useIsMobile';
 
 function VaderGeometry() {
   const groupRef = useRef<THREE.Group>(null);
@@ -117,6 +118,16 @@ function VaderGeometry() {
 }
 
 export default function VaderHelmet() {
+  const isMobile = useIsMobile();
+  if (isMobile) {
+    return (
+      <div className="w-full h-full flex items-center justify-center relative">
+        <div className="w-64 h-64 rounded-full bg-[#ff0000]/10 blur-[80px] absolute" />
+        <div className="w-40 h-40 rounded-full bg-[#00d4ff]/10 blur-[60px] absolute" />
+        <div className="text-[120px] select-none opacity-20">🎭</div>
+      </div>
+    );
+  }
   return (
     <div className="w-full h-full relative cursor-move">
       <Canvas
