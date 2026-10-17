@@ -128,7 +128,7 @@ export default function Hero() {
               <span className="text-[10px] font-bold tracking-widest text-[#E0FF00] uppercase">Primary Expertise</span>
               <p className="text-xl font-light italic tracking-tight">TypeScript, Python, AI Agents, Infrastructure</p>
               <div className="flex flex-wrap gap-5 mt-5 text-[10px] uppercase tracking-widest">
-                <motion.a whileHover={{ x: 4 }} href="#projects" className="text-[#E0FF00]">Explore the work ↗</motion.a>
+                <motion.a whileHover={{ x: 4 }} href="#projects" className="text-[#E0FF00]">Explore the work</motion.a>
               </div>
             </div>
           </motion.div>

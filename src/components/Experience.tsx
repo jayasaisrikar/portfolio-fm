@@ -24,7 +24,7 @@ export default function Experience() {
             <div><h4>Keeping production honest</h4><p>Operate Next.js frontends, WordPress, APIs, and Linux/Docker services. Debug feed regressions, data-freshness issues, and stale caches, with integration and lifecycle tests supporting the platform.</p></div>
           </div>
           <div className="career-tools" aria-label="Technologies used"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Redis / BullMQ</span><span>Docker / AWS</span><span>Pretix</span></div>
-          <a className="text-link career-project-link" href="https://theenergymag.com" target="_blank" rel="noreferrer">The Energy Mag ↗</a>
+          <a className="text-link career-project-link" href="https://theenergymag.com" target="_blank" rel="noreferrer">The Energy Mag</a>
         </Reveal>
         <Reveal className="career-entry career-chapter">
           <div className="career-chapter-top"><span className="career-dates">JAN — OCT 2025</span><span className="career-chapter-number">THE PREVIOUS CHAPTER</span></div>
