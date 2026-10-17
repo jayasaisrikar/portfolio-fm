@@ -96,28 +96,28 @@ export default function About() {
           <motion.div variants={paragraphVariants} className="relative group">
             <span className="absolute -left-6 top-3 w-2 h-2 bg-[#E0FF00] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <p className="pl-4 border-l border-white/5 group-hover:border-[#E0FF00]/30 transition-colors duration-500">
-              I'm an <strong className="text-white font-medium">AI Founding Engineer</strong> obsessed with bridging the gap between raw AI capabilities and production-ready applications. My core focus is on architecting Agentic Systems and Scalable Data Pipelines that don't just demo well, but deliver real value at scale.
+              I'm <strong className="text-white font-medium">Jaya Sai Srikar, an AI Full-Stack Engineer</strong>. I build the systems around AI: agent harnesses, reliable data pipelines, product interfaces, and the infrastructure that keeps them running.
             </p>
           </motion.div>
           
           <motion.div variants={paragraphVariants} className="relative group">
             <span className="absolute -left-6 top-3 w-2 h-2 bg-[#E0FF00] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <p className="pl-4 border-l border-white/5 group-hover:border-[#E0FF00]/30 transition-colors duration-500">
-              Whether it's orchestrating complex multi-agent workflows in <span className="text-[#E0FF00] hover:text-white transition-colors cursor-crosshair">Python</span>, building realtime low-latency architectures in <span className="text-[#E0FF00] hover:text-white transition-colors cursor-crosshair">TypeScript/Node.js</span>, or fine-tuning models for niche use-cases, I build robust systems designed to thrive in the chaotic real world.
+              At <strong className="text-white font-medium">Blocksbridge Consulting</strong>, I engineer research and publishing automation for The Energy Mag, including a pipeline that turns breaking energy news into structured articles in under 20 seconds. I also own the full-stack architecture for Energy Investors Forum 2027.
             </p>
           </motion.div>
           
           <motion.div variants={paragraphVariants} className="relative group">
             <span className="absolute -left-6 top-3 w-2 h-2 bg-[#E0FF00] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <p className="pl-4 border-l border-white/5 group-hover:border-[#E0FF00]/30 transition-colors duration-500">
-              Currently pushing boundaries as an AI Founding Engineer at <strong className="text-white hover:text-[#E0FF00] transition-colors cursor-pointer">Blocksbridge Consulting</strong>, I am continuously exploring the absolute edges of where AI meets massive infrastructural scale. When I'm not coding, I'm usually over-analyzing design architectures or experimenting with emerging open-source LLM frameworks. Let's build the unbuildable.
+              My independent work spans <span className="text-[#E0FF00]">FORK, Crosswake, and Quoril</span>: governed agent execution, reproducible market research, and an offline-first productivity app. I care about explicit permissions, verifiable state, and software that holds up beyond a demo.
             </p>
           </motion.div>
 
           <motion.div variants={paragraphVariants} className="relative group">
             <span className="absolute -left-6 top-3 w-2 h-2 bg-[#E0FF00] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <p className="pl-4 border-l border-white/5 group-hover:border-[#E0FF00]/30 transition-colors duration-500">
-              Beyond AI, I'm deep into <span className="text-[#E0FF00] hover:text-white transition-colors cursor-crosshair">Web3</span> — building on-chain systems, writing smart contracts, exploring crypto arbitrage strategies, and integrating wallet infrastructure. The convergence of AI agents and decentralised networks is where I think the next frontier lives.
+              I graduated with a <strong className="text-white font-medium">B.Tech in Information Technology from JNTU-GV (2021–2025), CGPA 8.24</strong>. I served as ACM Student Chapter Secretary and led a Smart India Hackathon 2023 grand-finalist team. When I believe in an idea, I challenge assumptions and keep iterating until it works in the real world.
             </p>
           </motion.div>
 

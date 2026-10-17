@@ -16,10 +16,10 @@ export default function Hackathons() {
         >
           <span className="text-[10px] font-bold tracking-widest text-[#E0FF00] uppercase flex items-center gap-4">
             <span className="w-8 h-[1px] bg-[#E0FF00] inline-block" />
-            Competitive Coding
+            Recognition & Leadership
           </span>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight">
-            Hackathons & <br/> <span className="stroke-text">Innovations</span>
+            Built. Tested. <br/> <span className="stroke-text">Recognized.</span>
           </h2>
         </motion.div>
 
@@ -34,20 +34,20 @@ export default function Hackathons() {
           <div className="p-8 md:p-12 relative z-10 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8">
             <div className="flex flex-col justify-between">
               <div>
-                <h3 className="text-3xl font-bold uppercase tracking-tight text-white group-hover:text-[#E0FF00] transition-colors duration-500 mb-2">Smart India Hackathon</h3>
-                <p className="text-white/60 uppercase tracking-widest text-xs font-mono mb-8">Participant & Developer</p>
+                <h3 className="text-3xl font-bold uppercase tracking-tight text-white group-hover:text-[#E0FF00] transition-colors duration-500 mb-2">ADK-TS Hackathon 2025</h3>
+                <p className="text-white/60 uppercase tracking-widest text-xs font-mono mb-8">Best Collaboration / MCP Track</p>
               </div>
               <div className="text-[10px] uppercase font-bold tracking-widest px-4 py-2 bg-white/5 border border-white/10 rounded-full self-start inline-flex group-hover:border-[#E0FF00]/50 transition-colors">
-                National Level
+                Track Winner
               </div>
             </div>
             
             <div className="flex flex-col gap-6 text-white/70">
               <p className="text-lg font-light leading-relaxed">
-                Participated in the Smart India Hackathon (SIH), one of the world's largest open innovation models. Collaborated with a team of developers under intense time constraints to architect and deliver a robust solution addressing a complex, real-world problem statement provided by a central ministry.
+                Won Best Collaboration / MCP Track for the On-Chain Analysis Agent: a multi-agent crypto research system connecting token detection, real-time market data, web research, and structured synthesis.
               </p>
               <p className="text-sm border-l-2 border-[#E0FF00]/50 pl-4">
-                <strong className="text-white">Core Focus:</strong> Developing scalable pipelines, integrating automated AI analysis features, and ensuring a seamless, low-latency user experience.
+                <strong className="text-white">Smart India Hackathon 2023:</strong> Grand Finalist and Team Lead. Also served as Secretary of the ACM JNTU-GV Student Chapter.
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, useReducedMotion, useScroll, useSpring } from 'motion/react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
@@ -11,11 +11,14 @@ import ScrollBall from '../components/ScrollBall';
 
 export default function Landing() {
   const { hash } = useLocation();
+  const reducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   useEffect(() => {
     if (hash) {
       setTimeout(() => {
-        const element = document.querySelector(hash);
+        const element = document.getElementById(decodeURIComponent(hash.slice(1)));
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -32,7 +35,8 @@ export default function Landing() {
       exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
       className="w-full"
     >
-      <ScrollBall />
+      <motion.div aria-hidden="true" className="fixed top-0 left-0 right-0 h-0.5 bg-[#E0FF00] origin-left z-[80]" style={{ scaleX: reducedMotion ? scrollYProgress : progress }} />
+      {!reducedMotion && <ScrollBall />}
       <Hero />
       <About />
       <Experience />

@@ -97,7 +97,7 @@ const IconScrollDown = () => (
 const PLACES = [
   { city: "Vizag", country: "India", desc: "Home. Waking up to the Bay of Bengal. Beach road at 6am before the world is awake.", color: "#00d4ff" },
   { city: "Hyderabad", country: "India", desc: "The city of Biryani and Big Tech. Conference halls & late-night hackathons.", color: "#ff0000" },
-  { city: "Bengaluru", country: "India", desc: "The Silicon Valley of India. Where OPL happened and the career began.", color: "#00ff88" },
+  { city: "Bengaluru", country: "India", desc: "The Silicon Valley of India. A city of builders and ambitious ideas.", color: "#00ff88" },
   { city: "Agra", country: "India", desc: "The Taj at sunrise — nothing prepares you for it. Architecture that makes you question your ambitions.", color: "#ffaa00" },
   { city: "New Delhi", country: "India", desc: "The capital chaos. History on every corner, the future being built right next to it.", color: "#9900ff" },
   { city: "Varkala", country: "India", desc: "Cliffs over the Arabian Sea. The kind of place where you reset completely.", color: "#00ff88" },
@@ -122,8 +122,8 @@ const MOVIES = [
 
 const FACTS = [
   { label: "Based in",         value: "Vizag, India",                 Icon: IconPin     },
-  { label: "Currently hacking", value: "Agentic AI + Web3 @ Blocksbridge",   Icon: IconCpu     },
-  { label: "Education",        value: "B.Tech Information Technology",       Icon: IconGrad    },
+  { label: "Currently hacking", value: "AI systems & platforms @ Blocksbridge",   Icon: IconCpu     },
+  { label: "Education",        value: "JNTU-GV · B.Tech IT · 8.24 CGPA",       Icon: IconGrad    },
   { label: "Hackathon - Team Lead",        value: "SIH 2023 National Finalist",    Icon: IconTrophy  },
   { label: "First language",   value: "Typescript (still the GOAT)",       Icon: IconCode    },
   { label: "Superpower",       value: "Shipping at 3am without pills",  Icon: IconZap     },
@@ -452,7 +452,7 @@ export default function DetailedProfile() {
                 <motion.p
                   variants={{ hidden: { opacity: 0, y: 35 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}
                   className="relative pl-6 md:pl-8 border-l-2 border-[#9900ff]/20 hover:border-[#9900ff] transition-colors duration-500 py-2">
-                  His professional journey started at OPL (One Paper Lane) in Bengaluru — building OCR pipelines, AWS infrastructure, and Generative AI tooling. That first script that automated something boring lit a fire that hasn't gone out since.
+                  At Drishya AI Labs (Jan–Oct 2025), he worked on Junior, an agentic engineering copilot, cloud-adapter libraries, and Azure/Kubernetes infrastructure. He now builds production AI systems and platforms at Blocksbridge Consulting.
                 </motion.p>
               </div>
               <div className="flex-1 flex flex-col gap-10">
@@ -464,7 +464,7 @@ export default function DetailedProfile() {
                 <motion.p
                   variants={{ hidden: { opacity: 0, y: 35 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}
                   className="relative pl-6 md:pl-8 border-l-2 border-[#00ff88]/20 hover:border-[#00ff88] transition-colors duration-500 py-2">
-                  Parallel to AI, he's gone deep into <strong className="text-white">Web3</strong> — writing smart contracts, studying DeFi mechanics, building crypto arbitrage strategies, and wiring up wallet infrastructure. He believes the next paradigm shift isn't AI or blockchain alone, it's both operating together on-chain.
+                  His projects connect <strong className="text-white">AI, research, and reliable infrastructure</strong>: FORK governs agent execution, Crosswake makes market research reproducible, and Quoril brings offline-first productivity to the desktop. His quant work focuses on causal backtests and paper signals, with no live-money trading.
                 </motion.p>
                 <motion.p
                   variants={{ hidden: { opacity: 0, y: 35 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}

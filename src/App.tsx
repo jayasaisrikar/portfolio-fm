@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, MotionConfig } from 'motion/react';
 import Landing from './pages/Landing';
 import DetailedProfile from './pages/DetailedProfile';
 import Navigation from './components/Navigation';
@@ -11,7 +11,7 @@ export default function App() {
   const isProfile = location.pathname === '/profile';
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-[#F5F5F5] font-sans relative overflow-x-hidden">
+    <MotionConfig reducedMotion="user"><main className="min-h-screen bg-[#0A0A0A] text-[#F5F5F5] font-sans relative overflow-x-hidden">
       <CustomCursor />
       {!isProfile && <Navigation />}
       <AnimatePresence mode="wait">
@@ -21,6 +21,6 @@ export default function App() {
         </Routes>
       </AnimatePresence>
       {!isProfile && <Footer />}
-    </main>
+    </main></MotionConfig>
   );
 }

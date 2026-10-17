@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 function Lightsaber() {
+  const reducedMotion = useReducedMotion();
   return (
     <div className="absolute top-1/2 left-1/2 md:left-3/4 -translate-y-1/2 -rotate-12 h-screen w-[100px] flex flex-col justify-center items-center z-0 pointer-events-none opacity-40 mix-blend-screen scale-150 origin-center">
       {/* Blade */}
@@ -20,15 +21,15 @@ function Lightsaber() {
           `
         }}
       >
-        <motion.div 
-          animate={{ opacity: [0.8, 1, 0.8] }} 
-          transition={{ repeat: Infinity, duration: 0.1, ease: "linear" }}
+        <motion.div
+          animate={{ opacity: reducedMotion ? 1 : [0.8, 1, 0.8] }}
+          transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }}
           className="absolute inset-0 bg-white blur-[2px] rounded-t-full"
         />
       </motion.div>
-      
+
       {/* Hilt */}
-      <motion.div 
+      <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
@@ -53,7 +54,7 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.025,
       },
     },
   };
@@ -77,12 +78,13 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-12 overflow-hidden">
       {/* Side Label */}
       <div className="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 origin-left text-[10px] tracking-[0.5em] text-white/30 uppercase whitespace-nowrap">
-        AI Engineer / Web3 Builder / Creative Developer
+        AI Systems / Platforms / Infrastructure
       </div>
 
       <div className="max-w-6xl mx-auto lg:mx-0 lg:ml-12 relative z-10 w-full">
         <div className="flex flex-col gap-6">
-          <motion.h1 
+          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-[10px] uppercase tracking-[0.25em] text-[#E0FF00]">Jaya Sai Srikar / AI Full-Stack Engineer</motion.p>
+          <motion.h1 aria-label="Building Agentic Systems."
             variants={titleVariants}
             initial="hidden"
             whileInView="visible"
@@ -90,7 +92,7 @@ export default function Hero() {
             className="text-[12vw] md:text-[140px] leading-[0.85] font-bold tracking-tighter uppercase mb-4 flex flex-col"
           >
             {titleLines.map((line, i) => (
-              <span key={i} className={`flex overflow-hidden ${line.className}`}>
+              <span aria-hidden="true" key={i} className={`flex overflow-hidden ${line.className}`}>
                 {line.text.split('').map((char, j) => (
                   <motion.span key={j} variants={letterVariants} className="inline-block">
                     {char === ' ' ? '\u00A0' : char}
@@ -100,7 +102,7 @@ export default function Hero() {
             ))}
           </motion.h1>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -109,22 +111,25 @@ export default function Hero() {
           >
             <div className="md:w-64">
               <p className="text-[11px] leading-relaxed text-white/60 tracking-wide">
-                I build production-grade multi-agent systems, AI-powered platforms, scalable data pipelines, and Web3 infrastructure — wallets, DeFi arbitrage, and on-chain automation. Founding Engineer at <span className="text-white">Blocksbridge Consulting</span>.
+                I’m Jaya Sai Srikar. I build AI systems, platforms, and the infrastructure behind them — from research and publishing automation to governed agent execution. AI Full-Stack Engineer at <span className="text-white">Blocksbridge Consulting</span>.
               </p>
               <a
-                href="https://wayflo.jayasaisrikar.xyz"
+                href="https://fork-dun.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-[9px] font-bold tracking-widest uppercase text-[#E0FF00] hover:opacity-70 transition-opacity"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E0FF00] animate-pulse" />
-                wayflo.jayasaisrikar.xyz — live now
+                Explore FORK — governed agent execution
               </a>
             </div>
             <div className="hidden md:block h-[1px] w-24 bg-white/20 mt-3"></div>
             <div className="flex flex-col gap-2 pt-4 md:pt-0 w-full md:w-auto">
               <span className="text-[10px] font-bold tracking-widest text-[#E0FF00] uppercase">Primary Expertise</span>
-              <p className="text-xl font-light italic tracking-tight">TypeScript, Python, Multi-Agent AI, Web3</p>
+              <p className="text-xl font-light italic tracking-tight">TypeScript, Python, AI Agents, Infrastructure</p>
+              <div className="flex flex-wrap gap-5 mt-5 text-[10px] uppercase tracking-widest">
+                <motion.a whileHover={{ x: 4 }} href="#projects" className="text-[#E0FF00]">Explore the work ↗</motion.a>
+              </div>
             </div>
           </motion.div>
         </div>

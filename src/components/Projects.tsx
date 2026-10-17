@@ -1,103 +1,138 @@
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
 import { ArrowUpRight, X, Github, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const projects = [
   {
-    id: "wayflo",
-    title: "Wayflo",
-    badge: "PRODUCTION · LIVE",
-    description: "AI travel planner that connects real destinations, trip windows, budgets & pace into calm, reusable itineraries.",
-    fullDescription: "Wayflo is a production-grade AI-powered travel planning platform. It lets users search live destinations, anchor trips around real arrival/departure windows, shape plans around an actual budget, and keep the itinerary, map view, and trip notes together so the plan stays usable after you close the tab. Built with a focus on calm UX — minimal inputs, smart timing, and route flow that doesn't feel like paperwork.",
-    tech: ["Next.js", "TypeScript", "AI", "Maps API", "Supabase"],
-    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://wayflo.jayasaisrikar.xyz",
-    repoLink: "https://wayflo.jayasaisrikar.xyz"
+    "id": "fork",
+    "title": "FORK",
+    "description": "Governed agent execution: simulate competing decisions, approve one plan, and execute with a verifiable audit trail.",
+    "fullDescription": "A generalizable agent harness that simulates LLM-proposed financial decisions against a frozen ledger snapshot. A human approves exactly one plan before deterministic execution. ArmorIQ signed intents and policy-checked MCP calls enforce ALLOW/HOLD/BLOCK decisions. SHA-256 plan binding, single-use capabilities, idempotency, and append-only double-entry postings guard against stale approvals and replay. Includes a decision studio, SSE execution timeline, and prompt-injection scenarios. Validated with 154 unit/integration, 14 Playwright, and 5 live ArmorIQ tests. Sandbox treasury, not real payments.",
+    "tech": [
+      "TypeScript",
+      "Next.js",
+      "Hono",
+      "Drizzle",
+      "SQLite",
+      "MCP",
+      "ArmorIQ"
+    ],
+    "demoLink": "https://fork-dun.vercel.app/",
+    "repoLink": "https://github.com/jayasaisrikar/fork",
+    "badge": "GOVERNED EXECUTION",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1000&q=80"
   },
   {
-    id: "onchain-agent",
-    title: "On-Chain Analysis Agent",
-    award: "Winner – MCP Track, ADK-TS Hackathon",
-    description: "Production-grade multi-agent AI system for automated Web3 & cryptocurrency analysis with real-time market data.",
-    fullDescription: "A comprehensive multi-agent system built to analyze Web3 on-chain data in real-time. Four specialized sub-agents run in parallel gathering token data, market metrics, and web intelligence. The root agent orchestrates research and analysis phases via the IQAI ADK, synthesising results into structured markdown reports with risk assessments and investment recommendations. Integrates CoinGecko and Tavily Search APIs.",
-    tech: ["TypeScript", "Next.js", "IQAI ADK", "CoinGecko API", "Tavily API"],
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://onchain-analysis-agent.vercel.app/",
-    repoLink: "https://github.com/jayasaisrikar"
+    "id": "crosswake",
+    "title": "Crosswake",
+    "description": "Live crypto market research, durable data infrastructure, causal backtests, and auditable paper signals.",
+    "fullDescription": "A market-data, research, backtesting, and paper-signal platform with 24/7 processes, a live dashboard, and Telegram delivery. Durable trade/quote journals, checksum-verified imports, typed Parquet datasets, freshness checks, and deterministic replay keep research reproducible. Causal backtests use walk-forward selection, one-use holdouts, and fee/slippage/funding models. A Mastra AgentController harness coordinates permission-aware specialist agents with persistent sessions. Signals are recorded in an append-only SHA-256 hash-chained log. No live-money trading.",
+    "tech": [
+      "TypeScript",
+      "Next.js",
+      "Mastra",
+      "Parquet",
+      "Linux"
+    ],
+    "demoLink": "https://project-crosswake.vercel.app/",
+    "repoLink": "https://github.com/jayasaisrikar/project-crosswake",
+    "badge": "RESEARCH \u00b7 PAPER SIGNALS",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80"
   },
   {
-    id: "otc-voice",
-    title: "OTC Voice Assistant",
-    description: "Voice-activated OTC trading system spanning OKX, Bybit, Deribit & Binance with real-time WebSocket updates.",
-    fullDescription: "A production-ready voice-activated trading assistant that handles complete OTC order flow through natural conversation. Supports OKX, Bybit, Deribit, and Binance APIs with live price feeds. Features contextual re-prompting for incomplete inputs, natural correction handling, visual progress indicators, robust error handling for API failures, and a beautiful real-time UI powered by WebSockets.",
-    tech: ["TypeScript", "WebSockets", "OKX API", "Bybit API", "Deribit API", "Binance API"],
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://github.com/jayasaisrikar/otc-voice-assistant",
-    repoLink: "https://github.com/jayasaisrikar/otc-voice-assistant"
+    "id": "quoril",
+    "title": "Quoril",
+    "description": "An offline-first productivity desktop app for tasks, focus sessions, activity analysis, and workspaces.",
+    "fullDescription": "Co-founded and built a cross-platform productivity product for macOS and Windows. Quoril brings tasks, focus sessions, activity analysis, and workspaces into an offline-first desktop app with SQLite persistence and synchronization.",
+    "tech": [
+      "React",
+      "Electron",
+      "SQLite",
+      "Sync"
+    ],
+    "demoLink": "https://quoril.in",
+    "repoLink": null,
+    "badge": "CO-FOUNDER",
+    "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80"
   },
   {
-    id: "code-architect",
-    title: "AI Code Architecture Agent",
-    description: "AI-powered tool for automated analysis and interactive visualization of GitHub repositories.",
-    fullDescription: "Developed an AI-powered tool (SPoC) that automatically ingests GitHub repositories or ZIP uploads, analyzes their folder structures, and enables natural language Q&A over the codebase. It provides architecture suggestions, feature placement guidance, and interactive diagrams. Features multi-model fallback between OpenAI and Gemini for robust insights.",
-    tech: ["Python", "FastAPI", "React", "Gemini API", "SQLite"],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://spoc-agent.vercel.app/",
-    repoLink: "https://github.com/jayasaisrikar"
+    "id": "onchain-agent",
+    "title": "On-Chain Analysis Agent",
+    "description": "Multi-agent crypto research combining token detection, market data, web research, and structured synthesis.",
+    "fullDescription": "An IQAI ADK sequential pipeline with shared session state for structured handoffs between token detection, real-time market data, web research, and synthesis. Integrates CoinGecko and Tavily tools. Winner of Best Collaboration / MCP Track at ADK-TS Hackathon 2025.",
+    "tech": [
+      "TypeScript",
+      "IQAI ADK",
+      "CoinGecko",
+      "Tavily"
+    ],
+    "demoLink": null,
+    "repoLink": "https://github.com/jayasaisrikar/on-chain-analysis-agent",
+    "badge": "ADK-TS 2025 \u00b7 TRACK WINNER",
+    "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1000&q=80"
   },
   {
-    id: "face-recog",
-    title: "Face Recognition Attendance",
-    description: "Comprehensive attendance system with authentication, role-based access, and real-time facial recognition.",
-    fullDescription: "A seamless access control and attendance management system leveraging edge-based facial recognition. Includes a robust Django backend with role-based access control (RBAC), real-time monitoring dashboards, and exportable analytics for administrators. Supports multi-camera input and handles liveness detection.",
-    tech: ["Python", "Django", "OpenCV", "Face Recognition API"],
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://github.com/jayasaisrikar/student_attendance",
-    repoLink: "https://github.com/jayasaisrikar/student_attendance"
+    "id": "stat-arb",
+    "title": "Statistical Arbitrage",
+    "description": "Market-neutral pairs research with rigorous out-of-sample validation and paper-trading ledgers.",
+    "fullDescription": "A crypto pairs research engine using cointegration/ADF testing, multiple-testing control, Kalman-filter hedge ratios, and rolling z-scores. Walk-forward validation evaluates out-of-sample behavior. Includes scheduled asset screening, pair invalidation, paper-trading ledgers, protected REST/WebSocket endpoints, and asynchronous workers.",
+    "tech": [
+      "TypeScript",
+      "Fastify",
+      "TimescaleDB",
+      "Redis",
+      "BullMQ"
+    ],
+    "demoLink": null,
+    "repoLink": "https://github.com/jayasaisrikar/stat-arb",
+    "badge": "QUANT RESEARCH",
+    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80"
   },
   {
-    id: "gemini-chat",
-    title: "Gemini AI Chatbot",
-    description: "AI chatbot with dashboard for product/article context injection via live web scraping.",
-    fullDescription: "A versatile conversational agent powered by Gemini AI with custom web-scraping capabilities. Users can input product URLs or articles, and the system uses BeautifulSoup to scrape, clean, and inject the context directly into the LLM prompt, enabling highly specific, context-aware responses beyond the model's training data.",
-    tech: ["Python", "Gemini AI", "BeautifulSoup", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://github.com/jayasaisrikar/chatbot",
-    repoLink: "https://github.com/jayasaisrikar/chatbot"
+    "id": "code-architect",
+    "title": "AI Code Architecture Agent",
+    "description": "Multi-model repository analysis, architecture diagrams, and guidance on where new features belong.",
+    "fullDescription": "A repository analysis tool with multi-model reasoning, architecture diagrams, and feature-placement guidance, built with FastAPI, React, and Mem0.",
+    "tech": [
+      "Python",
+      "FastAPI",
+      "React",
+      "Mem0"
+    ],
+    "demoLink": null,
+    "repoLink": "https://github.com/jayasaisrikar/spoc-agent",
+    "badge": "DEVELOPER TOOLS",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80"
   },
   {
-    id: "finance-tracker",
-    title: "Finance Tracker",
-    description: "JWT auth, OAuth2, real-time expense ratio monitoring, and financial health insights.",
-    fullDescription: "A comprehensive personal finance dashboard offering real-time expense ratio tracking, budget forecasting, and tailored financial advice. Built with FastAPI and Streamlit, it features seamless OAuth2 integration, JWT-secured endpoints, and Plotly for highly interactive data visualization. Tracks spending patterns and surfaces actionable insights.",
-    tech: ["FastAPI", "Streamlit", "Plotly", "OAuth2", "JWT"],
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://github.com/jayasaisrikar/finance-tracker",
-    repoLink: "https://github.com/jayasaisrikar/finance-tracker"
-  },
-  {
-    id: "ityukta",
-    title: "ITyukta 2K24",
-    description: "Official website for JNTUGV's annual tech fest — built for thousands of students and participants.",
-    fullDescription: "Designed and developed the official website for ITyukta 2K24, the annual technical festival of JNTU Vizianagaram. The site handled event registrations, schedule management, and real-time updates for thousands of student participants across multiple technical and non-technical events.",
-    tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop",
-    demoLink: "https://ityukta2k24.jntugv.in/",
-    repoLink: "https://github.com/jayasaisrikar"
+    "id": "gridflex",
+    "title": "GridFlex",
+    "description": "Energy verification with versioned evidence and auditable proof chains.",
+    "fullDescription": "An energy verification platform using versioned evidence, append-only provenance, canonical hashing, and auditable proof chains.",
+    "tech": [
+      "Evidence versioning",
+      "Canonical hashing",
+      "Provenance"
+    ],
+    "demoLink": null,
+    "repoLink": "https://github.com/jayasaisrikar/gridflex",
+    "badge": "ENERGY SYSTEMS",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80"
   }
 ];
 
-function ProjectCard({ 
-  project, 
-  index, 
-  onClick 
-}: { 
-  project: typeof projects[0]; 
-  index: number; 
+function ProjectCard({
+  project,
+  index,
+  onClick
+}: {
+  project: typeof projects[0];
+  index: number;
   onClick: () => void;
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  
+  const reducedMotion = useReducedMotion();
+
   // Parallax tracking
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
@@ -109,7 +144,8 @@ function ProjectCard({
   const translateX = useTransform(springX, [0, 1], ["-5%", "5%"]);
   const translateY = useTransform(springY, [0, 1], ["-5%", "5%"]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (reducedMotion || e.pointerType === 'touch') return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
@@ -144,10 +180,17 @@ function ProjectCard({
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.55, delay: (index % 3) * 0.07, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
+      onPointerMove={handleMouseMove}
+      role="button"
+      tabIndex={0}
+      aria-label={`View ${project.title}`}
+      onFocus={() => setIsHovered(true)}
+      onBlur={handleMouseLeave}
+      onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onClick(); } }}
+      whileHover={reducedMotion ? undefined : { y: -6 }}
       onClick={onClick}
       className={`group relative overflow-hidden flex flex-col justify-end bg-white/[0.02] cursor-pointer ${
         index === 0 ? "md:col-span-2 lg:col-span-2 h-[400px] md:h-[500px]" : "h-[400px]"
@@ -155,11 +198,13 @@ function ProjectCard({
     >
       {/* Thumbnail Background */}
       <div className="absolute inset-0 z-0 border border-white/10 overflow-hidden">
-        <motion.img 
+        <motion.img
           layoutId={`image-${project.id}`}
           src={project.image}
-          style={{ x: translateX, y: translateY, scale: 1.15 }} // Extra scale to allow panning without showing edges
-          animate={{ 
+          alt=""
+          loading="lazy"
+          style={{ x: reducedMotion ? 0 : translateX, y: reducedMotion ? 0 : translateY, scale: 1.15 }} // Extra scale to allow panning without showing edges
+          animate={{
             filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)'
           }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -170,12 +215,12 @@ function ProjectCard({
       <div className="relative z-10 p-8 flex flex-col w-full h-full justify-between">
         <div className="flex justify-between items-start">
           <span className="text-[10px] font-mono tracking-widest px-3 py-1.5 rounded bg-black/50 backdrop-blur-md border border-white/10 uppercase">
-            0{index + 1} / {project.badge ? project.badge : project.award ? 'AWARDED' : 'WORK'}
+            0{index + 1} / {project.badge || 'WORK'}
           </span>
-          
-          <motion.div 
-            animate={{ 
-              opacity: isHovered ? 1 : 0, 
+
+          <motion.div
+            animate={{
+              opacity: 1,
               scale: isHovered ? 1 : 0.8,
               y: isHovered ? 0 : 10
             }}
@@ -193,23 +238,23 @@ function ProjectCard({
           </motion.h3>
 
           {/* Staggered container for description details */}
-          <motion.div 
+          <motion.div
             initial={false}
-            animate={{ 
-              height: isHovered ? 'auto' : 0,
-              opacity: isHovered ? 1 : 0,
-              marginTop: isHovered ? 16 : 0
+            animate={{
+              height: 'auto',
+              opacity: 1,
+              marginTop: 16
             }}
             className="overflow-hidden"
           >
             <motion.div
               variants={staggerContainer}
               initial="hidden"
-              animate={isHovered ? "visible" : "hidden"}
+              animate="visible"
             >
-              {(project.award || project.badge) && (
+              {(project.badge) && (
                 <motion.div variants={fadeUpItem} className="text-[10px] text-[#E0FF00] uppercase tracking-widest mb-4">
-                  {project.badge || project.award}
+                  {project.badge}
                 </motion.div>
               )}
 
@@ -221,8 +266,8 @@ function ProjectCard({
 
               <motion.div variants={fadeUpItem} className="flex flex-wrap gap-2 mt-6">
                 {project.tech.map((tech, i) => (
-                  <span 
-                    key={i} 
+                  <span
+                    key={i}
                     className="px-2.5 py-1 text-[9px] uppercase tracking-widest border border-white/20 bg-black/40 backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#E0FF00] group-hover:text-black group-hover:border-[#E0FF00]"
                   >
                     {tech}
@@ -238,17 +283,31 @@ function ProjectCard({
 }
 
 export default function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedProject(null);
+      if (event.key === 'Tab') {
+        const elements = Array.from(document.querySelectorAll<HTMLElement>('[role="dialog"] button, [role="dialog"] a[href]'));
+        const first = elements[0]; const last = elements[elements.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
+    };
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', handleKey);
+      document.querySelector<HTMLButtonElement>('[aria-label="Close project"]')?.focus();
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKey);
+      if (selectedProject) previousFocus?.focus();
     };
   }, [selectedProject]);
 
@@ -270,7 +329,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
-            <ProjectCard 
+            <ProjectCard
               key={project.id}
               project={project}
               index={index}
@@ -290,6 +349,9 @@ export default function Projects() {
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-title"
               layoutId={`project-${selectedProject.id}`}
               className="w-full max-w-6xl bg-[#0A0A0A] border border-white/10 flex flex-col lg:flex-row relative cursor-default shadow-2xl my-auto min-h-[60vh]"
               onClick={(e) => e.stopPropagation()}
@@ -300,6 +362,7 @@ export default function Projects() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="absolute top-4 right-4 lg:top-8 lg:right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#E0FF00] hover:text-black hover:border-[#E0FF00] transition-colors"
+                aria-label="Close project"
                 onClick={() => setSelectedProject(null)}
               >
                 <X className="w-5 h-5" />
@@ -309,6 +372,7 @@ export default function Projects() {
               <div className="w-full lg:w-1/2 h-[40vh] lg:h-auto min-h-[40vh] relative overflow-hidden">
                 <motion.img
                   layoutId={`image-${selectedProject.id}`}
+                  alt=""
                   src={selectedProject.image}
                   className="w-full h-full object-cover grayscale mix-blend-screen"
                 />
@@ -317,8 +381,8 @@ export default function Projects() {
 
               {/* Content Section */}
               <div className="w-full lg:w-1/2 p-8 md:p-16 flex flex-col justify-center">
-                <motion.h2 
-                  layoutId={`title-${selectedProject.id}`} 
+                <motion.h2 id="project-title"
+                  layoutId={`title-${selectedProject.id}`}
                   className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-8 text-[#E0FF00]"
                 >
                   {selectedProject.title}
@@ -330,10 +394,10 @@ export default function Projects() {
                   transition={{ delay: 0.2 }}
                   className="flex flex-col gap-8"
                 >
-                  {(selectedProject.award || selectedProject.badge) && (
+                  {(selectedProject.badge) && (
                     <div className="inline-flex items-start">
                       <span className="text-[10px] uppercase tracking-widest border border-[#E0FF00]/50 text-[#E0FF00] px-3 py-1.5 bg-[#E0FF00]/10">
-                        {selectedProject.badge || selectedProject.award}
+                        {selectedProject.badge}
                       </span>
                     </div>
                   )}
@@ -361,14 +425,14 @@ export default function Projects() {
                   </div>
 
                   <div className="flex flex-wrap gap-6 mt-8 pt-8 border-t border-white/10">
-                     <a href={selectedProject.demoLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest hover:text-[#E0FF00] transition-colors group">
+                     {selectedProject.demoLink && <a href={selectedProject.demoLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest hover:text-[#E0FF00] transition-colors group">
                          <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                         Live Demo
-                     </a>
-                     <a href={selectedProject.repoLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest hover:text-[#E0FF00] transition-colors group">
+                         Live Site
+                     </a>}
+                     {selectedProject.repoLink && <a href={selectedProject.repoLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest hover:text-[#E0FF00] transition-colors group">
                          <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
                          Repository
-                     </a>
+                     </a>}
                   </div>
                 </motion.div>
               </div>

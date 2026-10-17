@@ -2,24 +2,72 @@ import { motion } from 'motion/react';
 
 const categories = [
   {
-    title: "Languages & Frameworks",
-    skills: ["TypeScript", "Python", "JavaScript", "Next.js", "React", "Django", "HTML", "CSS", "Streamlit", "React-Storybook"]
+    "title": "Languages & Frameworks",
+    "skills": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "SQL",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Fastify",
+      "Hono",
+      "Express",
+      "FastAPI",
+      "Django",
+      "Electron",
+      "REST",
+      "WebSockets"
+    ]
   },
   {
-    title: "AI & ML",
-    skills: ["GenAI", "LLMs", "Multi-Agent Systems", "Agentic Workflows", "MCP Servers", "NLP", "TensorFlow", "PyTorch"]
+    "title": "AI & Agents",
+    "skills": [
+      "LLM APIs",
+      "Multi-agent Systems",
+      "Mastra AgentController",
+      "MCP",
+      "Agent Harnesses",
+      "Tool Calling",
+      "Workflow Orchestration",
+      "Agent Memory",
+      "Knowledge Graphs",
+      "Structured Outputs"
+    ]
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["AWS Lambda", "GCP", "Azure Portal", "Docker", "Kubernetes", "VMware", "CI/CD pipelines"]
+    "title": "Data & Infrastructure",
+    "skills": [
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "TimescaleDB",
+      "Redis",
+      "BullMQ",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "AWS",
+      "Azure",
+      "Linux",
+      "GitHub Actions",
+      "Grafana"
+    ]
   },
   {
-    title: "Databases & Tools",
-    skills: ["Neo4j", "MySQL", "PostgreSQL", "NoSQL", "Git", "JIRA", "RESTful APIs", "SQLite"]
-  },
-  {
-    title: "Web3 & Blockchain",
-    skills: ["Solidity", "Ethers.js", "Web3.js", "Smart Contracts", "DeFi", "Crypto Arbitrage", "Wallet Integration", "EVM", "Hardhat", "IPFS"]
+    "title": "Quant & Blockchain",
+    "skills": [
+      "Backtesting",
+      "Statistical Arbitrage",
+      "Pairs Trading",
+      "Kalman Filters",
+      "Risk & Cost Modeling",
+      "DeFi",
+      "EVM / L2s",
+      "Cross-chain Systems",
+      "On-chain Analytics"
+    ]
   }
 ];
 

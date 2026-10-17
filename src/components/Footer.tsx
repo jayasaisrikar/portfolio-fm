@@ -74,9 +74,9 @@ export default function Footer() {
       <div className="px-6 md:px-12 py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 text-[9px] tracking-[0.2em] uppercase font-medium text-white/40">
         <div>© {new Date().getFullYear()} JAYASAISRIKAR PORTFOLIO</div>
         <div className="flex gap-8">
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-[#E0FF00]">Github</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#E0FF00]">LinkedIn</a>
-          <a href="https://leetcode.com" target="_blank" rel="noreferrer" className="hover:text-[#E0FF00]">LeetCode</a>
+          <a href="https://github.com/jayasaisrikar" target="_blank" rel="noreferrer" className="hover:text-[#E0FF00]">Github</a>
+          <a href="https://x.com/jayasaisrikar" target="_blank" rel="noreferrer" className="hover:text-[#E0FF00]">X / Twitter</a>
+          <a href="https://quoril.in" target="_blank" rel="noreferrer" className="hover:text-[#E0FF00]">Quoril</a>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 bg-[#E0FF00] rounded-full animate-pulse"></span>

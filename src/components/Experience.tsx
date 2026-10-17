@@ -3,40 +3,28 @@ import { useRef } from 'react';
 
 const experiences = [
   {
-    role: "AI Full-Stack Engineer (Founding)",
-    company: "Blocksbridge Consulting",
-    location: "Remote",
-    period: "Nov 2025 – Present",
-    description: [
-      "Sole engineer owning end-to-end development of AI-powered web platforms, research agents, and production systems.",
-      "Designed and deployed multi-agent AI systems using TypeScript, Python, OpenAI/Gemini APIs for automated research, analysis, and content generation.",
-      "Built full-stack applications using Next.js, React, FastAPI, and Node.js with scalable REST APIs and event-driven workflows.",
-      "Integrated Web3 and on-chain data pipelines (CoinGecko, blockchain analytics) into AI agents for real-time market intelligence.",
-      "Managed complete infrastructure including PostgreSQL (Supabase), Dockerized deployments, CI/CD, and cloud hosting (Vercel, Coolify)."
+    "role": "AI Full-Stack Engineer",
+    "company": "Blocksbridge Consulting",
+    "location": "Remote \u00b7 New York, USA",
+    "period": "Nov 2025 \u2013 Present",
+    "description": [
+      "Engineer production systems across The Energy Mag ecosystem: publishing, research automation, Next.js frontends, WordPress, APIs, and Linux/Docker services.",
+      "Built AI research and publishing harnesses that turn breaking energy news into researched, structured articles with sub-20-second end-to-end turnaround.",
+      "Operate ingestion-to-publication pipelines, resolving feed regressions, data freshness issues, and stale Next.js caches in production.",
+      "Own full-stack architecture for Energy Investors Forum 2027: accounts, ticketing, networking, directories, meetings, messaging, and admin workflows.",
+      "Designed auth, verification, entitlements, versioned APIs, and background jobs with Next.js, PostgreSQL, Redis, and BullMQ. Integrated Pretix using authenticated webhooks, idempotent sync workers, reconciliation, and recovery paths."
     ]
   },
   {
-    role: "Junior Software Engineer",
-    company: "Drishya AI",
-    location: "Vizianagaram, India",
-    period: "Jan 2024 – Oct 2024",
-    description: [
-      "Own end-to-end development and maintenance of two unified cloud adapter libraries in TypeScript and Python.",
-      "Developed microservices and features using TypeScript, React, and Express.js/Deno for generative AI and analytics platforms.",
-      "CI/CD pipelines built using GitHub Actions, Docker, and Azure AKS, reducing deployment time by 90%.",
-      "Authored Kubernetes manifests and managed Azure cloud migration, improving scalability, automation, and infrastructure reliability."
-    ]
-  },
-  {
-    role: "Jr Python Developer",
-    company: "OPL (One Paper Lane)",
-    location: "Bengaluru, Karnataka, India",
-    period: "May 2024 - Nov 2024",
-    description: [
-      "Worked extensively with AWS services to design and deploy robust cloud infrastructure and data pipelines.",
-      "Developed robust backend models in Python using Beautiful Soup for web scraping data extraction tasks.",
-      "Implemented scalable APIs and harnessed Large Language Models (LLM) and Generative AI to optimize Accounts Payable (AP) and OCR automation modules.",
-      "Managed relational data with MySQL to handle structured metrics and operational processing tasks."
+    "role": "Junior Software Engineer",
+    "company": "Drishya AI Labs",
+    "location": "Vizianagaram, India",
+    "period": "Jan 2025 \u2013 Oct 2025",
+    "description": [
+      "Contributed to Junior, an agentic engineering copilot, with knowledge-graph-backed workflows connecting industrial documents and engineering data.",
+      "Developed TypeScript/Python cloud-adapter libraries and Django services integrating data sources, APIs, and platform services.",
+      "Built repeatable infrastructure with Terraform and contributed to the Azure/Kubernetes migration with manifests and containerized services.",
+      "Automated builds and deployment with GitHub Actions, Docker, and Azure AKS, cutting deployment time by 90% versus the prior manual process."
     ]
   }
 ];
