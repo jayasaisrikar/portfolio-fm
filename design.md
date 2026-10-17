@@ -21,7 +21,7 @@ One short staggered introduction, subtle reveals, drawn paths, tactile link move
 Native links and disclosure elements. Visible focus outlines. Meaningful aria labels, decorative art hidden from assistive technology, no content available only on hover. Mobile nav remains visible without a menu. Contact uses email and actual social destinations.
 
 ## Content
-Use verified existing professional facts and project links. Personal interests derive from the prior portfolio. Do not invent testimonials, availability, success metrics, or a likeness of Jay. The doodle is an idea machine, not a portrait.
+Use verified existing professional facts and project links. Personal interests derive from the prior portfolio. Do not invent testimonials, availability, success metrics, or a likeness of Jay. The hero doodle is an idea machine, not a portrait. User-requested Star Wars marginalia (X-wing, Vader, R2-D2, Death Star) use original blue-ink SVG line art. Experience is a readable, contribution-led timeline with sourced outcomes.
 
 ## Exports
 
