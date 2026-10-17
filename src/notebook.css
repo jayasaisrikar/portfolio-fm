@@ -102,7 +102,7 @@ body { color: var(--color-ink); font-family: var(--font-body); }
 .quoril-sheet p { display: flex; gap: 8px; align-items: center; font-size: clamp(9px, 1vw, 13px); margin-top: 12px; white-space: nowrap; }
 .drawn-check { font-size: 16px; }
 .empty-check { width: 12px; height: 12px; border: 1px solid currentColor; display: inline-block; }
-.sheet-doodle { position: absolute; right: 8%; bottom: 4%; font-size: 40px; line-height: 1; }
+.sheet-doodle { position: absolute; right: 8%; bottom: 4%; font-size: 40px; line-height: 1; width: 40px; height: 40px; }
 .more-work { margin-top: var(--space-3xl); }
 .more-work-heading { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); }
 .more-work-heading > svg { width: 26px; height: 26px; color: var(--color-accent); }
@@ -491,3 +491,5 @@ html::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
 .project-story.is-revealed .project-art { animation: art-settle .9s cubic-bezier(.22,1,.36,1) both; }
 @keyframes art-settle { from { transform: scale(1.04) rotate(-.6deg); } to { transform: none; } }
 @media (prefers-reduced-motion: reduce) { .reveal-stagger > * { opacity: 1 !important; transform: none !important; } }
+.ticket-star { width: 1em; height: 1em; vertical-align: -0.12em; }
+.film-shelf.reveal-stagger.is-revealed > :nth-child(n+5), .place-list.reveal-stagger.is-revealed > :nth-child(n+5) { transition-delay: .36s; }

@@ -1,5 +1,5 @@
 import StarWarsDoodle from './StarWarsDoodle';
-import { Reveal } from '../pages/Landing';
+import Reveal from './Reveal';
 
 export default function Experience() {
   return <section id="experience" className="experience-notes page-width">

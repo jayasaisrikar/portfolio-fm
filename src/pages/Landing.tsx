@@ -5,14 +5,7 @@ import { Asterisk, IdeaMachine, ProjectArt } from '../components/NotebookArt';
 import { projects } from '../data/portfolio';
 import Experience from '../components/Experience';
 import StarWarsDoodle from '../components/StarWarsDoodle';
-
-export function Reveal({ children, className = '', from = 'up' }: { children: ReactNode; className?: string; from?: 'up' | 'left' | 'right' }) {
-  const reduced = useReducedMotion();
-  const x = reduced ? 0 : from === 'left' ? -32 : from === 'right' ? 32 : 0;
-  const y = reduced || from !== 'up' ? 0 : 28;
-  const [seen, setSeen] = useState(false);
-  return <motion.div className={`${className} reveal-stagger${seen ? ' is-revealed' : ''}`} initial={{ opacity: 0, x, y }} whileInView={{ opacity: 1, x: 0, y: 0 }} onViewportEnter={() => setSeen(true)} viewport={{ once: true, amount: 0.15 }} transition={{ duration: reduced ? 0.1 : 0.8, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>;
-}
+import Reveal from '../components/Reveal';
 
 const projectStories = [
   { id: 'fork', label: '01 / AI THAT KNOWS ITS BOUNDARIES', heading: 'Giving agents a little accountability.', body: 'What happens between “the AI suggested it” and “the system did it”? FORK makes that gap explicit. Simulate the options, review the consequences, approve one plan. Then execute.', detail: 'Signed intent plans, policy-checked MCP calls, single-use capabilities, and an append-only ledger. Tested with 154 unit/integration tests, 14 Playwright tests, and 5 live ArmorIQ tests. Sandbox treasury, not real payments.', tags: 'TypeScript / Next.js / Hono / MCP' },
@@ -59,6 +52,6 @@ export default function Landing() {
 
     <Experience />
 
-    <section className="off-clock page-width"><Reveal className="off-clock-inner"><div><StarWarsDoodle kind="deathstar" className="off-clock-doodle" /><span className="tiny-label">CLOSE THE LAPTOP FOR A SECOND</span><h2>There’s more<br />to the plot.</h2><p>Films with a little world-building. Places with a different pace. A good story, in almost any form.</p><Link className="text-link" to="/profile">Open my personal notebook</Link></div><div className="film-note"><div className="ticket-top"><span>JAY’S WATCHLIST</span><span>ADMIT ONE</span></div><div className="ticket-body"><span className="hand-note">If you’re picking a film tonight…</span><AnimatePresence mode="wait" initial={false}><motion.h3 key={film} aria-live="polite" initial={{ opacity: 0, y: reduced ? 0 : 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -10 }} transition={{ duration: 0.25 }}>{films[film]}</motion.h3></AnimatePresence><button className="text-link" onClick={() => setFilm(f => (f + 1) % films.length)}>Another one? <span>↻</span></button></div><div className="ticket-bottom"><span>NO SPOILERS. JUST GOOD STORIES.</span><span>✳</span></div></div></Reveal></section>
+    <section className="off-clock page-width"><Reveal className="off-clock-inner"><div><StarWarsDoodle kind="deathstar" className="off-clock-doodle" /><span className="tiny-label">CLOSE THE LAPTOP FOR A SECOND</span><h2>There’s more<br />to the plot.</h2><p>Films with a little world-building. Places with a different pace. A good story, in almost any form.</p><Link className="text-link" to="/profile">Open my personal notebook</Link></div><div className="film-note"><div className="ticket-top"><span>JAY’S WATCHLIST</span><span>ADMIT ONE</span></div><div className="ticket-body"><span className="hand-note">If you’re picking a film tonight…</span><AnimatePresence mode="wait" initial={false}><motion.h3 key={film} aria-live="polite" initial={{ opacity: 0, y: reduced ? 0 : 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -10 }} transition={{ duration: 0.25 }}>{films[film]}</motion.h3></AnimatePresence><button className="text-link" onClick={() => setFilm(f => (f + 1) % films.length)}>Another one? <span>↻</span></button></div><div className="ticket-bottom"><span>NO SPOILERS. JUST GOOD STORIES.</span><span><Asterisk className="ticket-star" /></span></div></div></Reveal></section>
   </main>;
 }

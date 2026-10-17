@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 
 export function Asterisk({ className = '' }: { className?: string }) {
-  return <svg className={className} viewBox="0 0 60 60" fill="none" aria-hidden="true"><path d="M30 3 29 57M7 16l46 28M7 44l46-28" stroke="currentColor" strokeWidth="6" strokeLinecap="round" /></svg>;
+  return <svg className={className} viewBox="0 0 60 60" fill="none" aria-hidden="true"><path d="M16 14 44 44M37 8 22 52M9 38l42-13" stroke="currentColor" strokeWidth="6.5" strokeLinecap="round" /></svg>;
 }
 
 export function IdeaMachine() {
@@ -47,5 +47,5 @@ export function ProjectArt({ kind }: { kind: string }) {
     <span className="art-name">FORK</span><span className="hand-note art-note">Think first. Execute second.</span>
   </div>;
   if (kind === 'crosswake') return <div className="project-art art-crosswake" aria-hidden="true"><span className="art-eyebrow">A SIGNAL THROUGH THE NOISE</span><svg viewBox="0 0 600 360" fill="none"><g stroke="currentColor" className="chart-grid" strokeWidth="0.6"><path d="M60 90h480M60 150h480M60 210h480M60 270h480M120 60v240M210 60v240M300 60v240M390 60v240M480 60v240" /></g><path d="M60 250c24 0 32-98 60-98s33 70 57 70 25-30 48-30 30 44 56 44 30-134 61-134 26 87 58 87 31-43 61-43 42 51 79-40" stroke="currentColor" strokeWidth="3" /><path d="M60 239c88-5 101-47 159-34s95-20 135-45 122 7 186-42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" /><circle cx="342" cy="102" r="7" fill="var(--color-paper-bright)" stroke="currentColor" strokeWidth="2" /></svg><span className="art-name">Crosswake</span><span className="hand-note art-note">Evidence over a lucky guess.</span></div>;
-  return <div className="project-art art-quoril" aria-hidden="true"><span className="art-eyebrow">A LITTLE SPACE TO GET THINGS DONE</span><div className="quoril-pages"><div className="quoril-sheet back-sheet" /><div className="quoril-sheet"><span className="hand-note">one thing at a time.</span><p><span className="drawn-check">✓</span> Make something useful</p><p><span className="drawn-check">✓</span> Find a little focus</p><p><span className="empty-check" /> Leave room to wander</p><div className="sheet-doodle">✳</div></div></div><span className="art-name">Quoril</span><span className="hand-note art-note">Your space. Your pace.</span></div>;
+  return <div className="project-art art-quoril" aria-hidden="true"><span className="art-eyebrow">A LITTLE SPACE TO GET THINGS DONE</span><div className="quoril-pages"><div className="quoril-sheet back-sheet" /><div className="quoril-sheet"><span className="hand-note">one thing at a time.</span><p><span className="drawn-check">✓</span> Make something useful</p><p><span className="drawn-check">✓</span> Find a little focus</p><p><span className="empty-check" /> Leave room to wander</p><Asterisk className="sheet-doodle" /></div></div><span className="art-name">Quoril</span><span className="hand-note art-note">Your space. Your pace.</span></div>;
 }
