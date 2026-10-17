@@ -492,7 +492,7 @@ html::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
 @keyframes art-settle { from { transform: scale(1.04) rotate(-.6deg); } to { transform: none; } }
 @media (prefers-reduced-motion: reduce) { .reveal-stagger > * { opacity: 1 !important; transform: none !important; } }
 .ticket-star { width: 1em; height: 1em; vertical-align: -0.12em; }
-.film-shelf.reveal-stagger.is-revealed > :nth-child(n+5), .place-list.reveal-stagger.is-revealed > :nth-child(n+5) { transition-delay: .48s; }
+.place-list.reveal-stagger.is-revealed > :nth-child(n+5) { transition-delay: .48s; }
 .plane-bob { animation: plane-bob 3.2s ease-in-out 2.6s infinite; transform-box: fill-box; }
 @keyframes plane-bob { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(3px, -5px) rotate(-3deg); } }
 /* Field-note atmosphere: paper grain, star charts, and coastal contours. */
@@ -515,3 +515,16 @@ html::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
 .not-found-page { padding-block: var(--space-3xl); }
 .not-found-page h1 { font-size: clamp(2.5rem, 6vw, 5rem); margin-block: var(--space-lg); }
 .not-found-page p { color: var(--color-ink-2); margin-bottom: var(--space-lg); }
+
+/* Film shelf: rows roll up like end credits, then respond to hover/open */
+.film-shelf.reveal-stagger > .film-row { transform: translateY(44px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.film-shelf.reveal-stagger.is-revealed > .film-row { transform: none; transition-delay: calc(var(--i, 0) * 70ms); }
+.film-row summary { position: relative; cursor: pointer; isolation: isolate; }
+.film-row summary::before { content: ''; position: absolute; inset: 0 -12px; z-index: -1; background: color-mix(in srgb, var(--color-accent) 7%, transparent); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.22,1,.36,1); }
+.film-row summary:hover::before, .film-row summary:focus-visible::before, .film-row[open] summary::before { transform: scaleX(1); }
+.film-title, .film-number { transition: transform .35s cubic-bezier(.22,1,.36,1), color .25s; }
+.film-row summary:hover .film-title, .film-row[open] .film-title { transform: translateX(10px); color: var(--color-accent); }
+.film-row summary:hover .film-number, .film-row[open] .film-number { color: var(--color-accent); }
+.film-row[open] > p { animation: film-note-in .5s cubic-bezier(.22,1,.36,1) both; }
+@keyframes film-note-in { from { opacity: 0; transform: translateY(-8px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); } }
+@media (prefers-reduced-motion: reduce) { .film-shelf.reveal-stagger > .film-row { transform: none !important; } .film-row summary::before { transition: none; } }
