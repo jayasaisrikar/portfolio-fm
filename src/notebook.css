@@ -493,3 +493,22 @@ html::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
 @media (prefers-reduced-motion: reduce) { .reveal-stagger > * { opacity: 1 !important; transform: none !important; } }
 .ticket-star { width: 1em; height: 1em; vertical-align: -0.12em; }
 .film-shelf.reveal-stagger.is-revealed > :nth-child(n+5), .place-list.reveal-stagger.is-revealed > :nth-child(n+5) { transition-delay: .48s; }
+.plane-bob { animation: plane-bob 3.2s ease-in-out 2.6s infinite; transform-box: fill-box; }
+@keyframes plane-bob { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(3px, -5px) rotate(-3deg); } }
+/* Field-note atmosphere: paper grain, star charts, and coastal contours. */
+.notebook-site { position: relative; isolation: isolate; background-image: url('/paper-grain.svg'); }
+.notebook-site > header, .notebook-site > main, .notebook-site > footer { position: relative; z-index: 1; }
+.field-background { position: absolute; inset: 0; overflow: clip; pointer-events: none; z-index: 0; color: var(--color-accent); }
+.field-background svg { position: absolute; display: block; opacity: .075; }
+.field-orbits { width: min(75vw, 1000px); height: auto; right: -15%; top: 130px; transform: rotate(12deg); }
+.field-coast { width: min(50vw, 620px); height: auto; left: -15%; top: 45%; opacity: .055 !important; }
+.hero-sketch { position: relative; }
+.hero-sketch::before { content: ''; position: absolute; inset: -5% -8%; z-index: -1; background-image: linear-gradient(var(--color-grid) 1px, var(--color-transparent) 1px), linear-gradient(90deg, var(--color-grid) 1px, var(--color-transparent) 1px); background-size: 28px 28px; mask-image: radial-gradient(ellipse, var(--color-ink) 35%, var(--color-transparent) 72%); transform: rotate(-6deg); }
+.experience-heading::before { content: ''; position: absolute; inset: 40% -5% 5%; z-index: -1; background-image: radial-gradient(var(--color-grid) 1.5px, var(--color-transparent) 1.5px); background-size: 18px 18px; mask-image: linear-gradient(var(--color-transparent), var(--color-ink) 30%, var(--color-transparent)); }
+.career-founder .career-role { color: var(--color-accent); }
+@media (max-width: 767px) {
+  .field-orbits { width: 130vw; right: -65%; top: 300px; opacity: .055 !important; }
+  .field-coast { width: 90vw; left: -55%; }
+  .hero-bottom > span:first-child { line-height: 1.9; }
+  .hero-sketch::before { inset: -5% -12%; }
+}

@@ -7,11 +7,24 @@ export default function Experience() {
       <Reveal className="experience-heading">
         <span className="tiny-label">EXPERIENCE / THE WORK BEHIND THE WORK</span>
         <h2>A few chapters<br />in the making.</h2>
-        <p>From engineering copilots to publishing pipelines and event platforms. Here’s where I’ve been putting the pieces together.</p>
+        <p>Co-founding Quoril, building engineering copilots, and shipping publishing pipelines and event platforms. Here’s where I’ve been putting the pieces together.</p>
         <StarWarsDoodle kind="r2" />
         <span className="hand-note career-margin-note">Build it. Learn from it.<br />Make it better.</span>
       </Reveal>
       <div className="career-list career-timeline">
+        <Reveal className="career-entry career-chapter career-founder">
+          <div className="career-chapter-top"><span className="career-dates">BUILDING A PRODUCT OF OUR OWN</span><span className="career-current">CO-FOUNDER</span></div>
+          <h3>Quoril</h3>
+          <p className="career-role">Co-founder</p>
+          <span className="career-location">Offline-first productivity · macOS &amp; Windows</span>
+          <p className="career-overview">Co-founding Quoril means taking the product from an idea to something people can use: a quieter place for tasks, focus sessions, activity analysis, and workspaces.</p>
+          <div className="career-contributions">
+            <div><h4>Building the product, not just a feature</h4><p>Co-founded and built a cross-platform desktop app that brings everyday productivity into one workspace, with local persistence and synchronization.</p></div>
+            <div><h4>Local first, by design</h4><p>Built with React, Electron, and SQLite so the core experience works offline, with synchronization connecting the wider experience.</p></div>
+          </div>
+          <div className="career-tools" aria-label="Technologies used"><span>React</span><span>Electron</span><span>SQLite</span><span>Synchronization</span></div>
+          <a className="text-link career-project-link" href="https://quoril.in" target="_blank" rel="noreferrer">Meet Quoril</a>
+        </Reveal>
         <Reveal className="career-entry career-chapter">
           <div className="career-chapter-top"><span className="career-dates">NOV 2025 — PRESENT</span><span className="career-current">CURRENT CHAPTER</span></div>
           <h3>Blocksbridge Consulting</h3>

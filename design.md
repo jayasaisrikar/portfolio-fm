@@ -12,7 +12,7 @@ Editorial with playful illustrative details. Split Studio homepage: personal int
 Paper #f5f2e9, ink #252e43, accent blue #2949b8, muted ink #565d6c. Bricolage Grotesque display, DM Sans body, Caveat only for handwritten marginal notes. Headings stay upright. All tokens are in tokens.css and imported by the page stylesheet. Additional color values belong there.
 
 ## Layout
-Maximum width 1320px. Fluid page gutters, strong left alignment, open whitespace and quiet rules. No stock photography, fake browser frames, glass, decorative dashboards, or 3D background scenes. Illustrations are original SVG diagrams, clearly presented as illustrations rather than screenshots.
+Maximum width 1320px. Fluid page gutters, strong left alignment, open whitespace and quiet rules. No stock photography, fake browser frames, glass, decorative dashboards, or 3D background scenes. Backgrounds use subtle SVG paper grain, blue-ink orbital charts, coastal contours, and local graph-paper patterns. Quoril co-founder is a primary part of Jay’s identity and experience. Illustrations are original SVG diagrams, clearly presented as illustrations rather than screenshots.
 
 ## Motion
 One short staggered introduction, subtle reveals, drawn paths, tactile link movement, an explicitly triggered idea-machine sketch. No scroll hijacking, custom cursor, autoplay audio, or continuous decorative animation. Reduced motion removes spatial movement and keeps content immediately usable.
