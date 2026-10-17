@@ -6,6 +6,7 @@ import { projects } from '../data/portfolio';
 import Experience from '../components/Experience';
 import StarWarsDoodle from '../components/StarWarsDoodle';
 import Reveal from '../components/Reveal';
+import { useStaticDocument } from '../lib/rendering';
 
 const projectStories = [
   { id: 'fork', label: '01 / AI THAT KNOWS ITS BOUNDARIES', heading: 'Giving agents a little accountability.', body: 'What happens between “the AI suggested it” and “the system did it”? FORK makes that gap explicit. Simulate the options, review the consequences, approve one plan. Then execute.', detail: 'Signed intent plans, policy-checked MCP calls, single-use capabilities, and an append-only ledger. Tested with 154 unit/integration tests, 14 Playwright tests, and 5 live ArmorIQ tests. Sandbox treasury, not real payments.', tags: 'TypeScript / Next.js / Hono / MCP' },
@@ -18,6 +19,7 @@ const films = ['The Grand Budapest Hotel', 'Forrest Gump', 'Interstellar', 'Star
 export default function Landing() {
   const { hash } = useLocation();
   const reduced = useReducedMotion();
+  const staticDocument = useStaticDocument();
   const [film, setFilm] = useState(0);
   useEffect(() => {
     if (!hash) { window.scrollTo({ top: 0, behavior: 'instant' }); return; }
@@ -26,14 +28,14 @@ export default function Landing() {
   }, [hash, reduced]);
   return <main id="main-content">
     <section className="notebook-hero page-width">
-      <motion.div className="hero-writing" initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: reduced ? 0 : 0.12 } } }}>
+      <motion.div className="hero-writing" initial={staticDocument ? false : "hidden"} animate="visible" variants={{ visible: { transition: { staggerChildren: reduced ? 0 : 0.12 } } }}>
         <motion.span className="tiny-label hero-kicker" variants={heroItem}><span className="ink-dot" /> ENGINEER BY TRADE. CURIOUS BY DEFAULT.</motion.span>
-        <motion.h1 variants={heroItem}>Hi, I’m Jay.<br />I build things<br />I <span className="wish-word">wish<svg viewBox="0 0 250 20" preserveAspectRatio="none" aria-hidden="true"><motion.path initial={{ pathLength: reduced ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.9, delay: reduced ? 0 : 0.9, ease: [0.65, 0, 0.35, 1] }} d="M5 13Q90 1 242 9M15 18Q135 7 229 14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg></span> existed.</motion.h1>
+        <motion.h1 variants={heroItem}>Hi, I’m Jay.<br />I build things<br />I <span className="wish-word">wish<svg viewBox="0 0 250 20" preserveAspectRatio="none" aria-hidden="true"><motion.path initial={staticDocument ? false : { pathLength: reduced ? 1 : 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.9, delay: reduced ? 0 : 0.9, ease: [0.65, 0, 0.35, 1] }} d="M5 13Q90 1 242 9M15 18Q135 7 229 14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg></span> existed.</motion.h1>
         <motion.p className="hero-intro" variants={heroItem}>AI systems, thoughtful software, and ideas that won’t leave me alone. I’m Jaya Sai Srikar — co-founder at Quoril and an engineer who likes turning “what if” into something you can use.</motion.p>
         <motion.a className="text-link hero-work-link" variants={heroItem} href="#projects">Come see what I’m making <span>↓</span></motion.a>
       </motion.div>
-      <motion.div className="hero-sketch" initial={{ opacity: 0, rotate: reduced ? 0 : 4, scale: reduced ? 1 : 0.96 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={reduced ? { duration: 0.1 } : { type: 'spring', stiffness: 90, damping: 16, delay: 0.25 }}><IdeaMachine /></motion.div>
-      <motion.div className="hero-bottom" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: reduced ? 0 : 0.8 }}><span>Co-founder at <a href="https://quoril.in" target="_blank" rel="noreferrer">Quoril</a> · Engineer at <a href="#experience">Blocksbridge</a></span><span className="hand-note">Part engineer, part “wait, what if…”</span><span>SCROLL TO WANDER ↓</span></motion.div>
+      <motion.div className="hero-sketch" initial={staticDocument ? false : { opacity: 0, rotate: reduced ? 0 : 4, scale: reduced ? 1 : 0.96 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={reduced ? { duration: 0.1 } : { type: 'spring', stiffness: 90, damping: 16, delay: 0.25 }}><IdeaMachine /></motion.div>
+      <motion.div className="hero-bottom" initial={staticDocument ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: reduced ? 0 : 0.8 }}><span>Co-founder at <a href="https://quoril.in" target="_blank" rel="noreferrer">Quoril</a> · Engineer at <a href="#experience">Blocksbridge</a></span><span className="hand-note">Part engineer, part “wait, what if…”</span><span>SCROLL TO WANDER ↓</span></motion.div>
     </section>
 
     <section id="projects" className="work-section page-width">

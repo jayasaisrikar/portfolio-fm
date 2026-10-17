@@ -2,10 +2,17 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import { renderHead } from './src/lib/seo';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), {
+      name: 'development-page-metadata',
+      apply: 'serve',
+      transformIndexHtml(html, context) {
+        return html.replace('<!--seo-head-->', renderHead(context.path));
+      },
+    }],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

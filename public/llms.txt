@@ -1,0 +1,31 @@
+# Jaya Sai Srikar
+
+> Official personal portfolio of Jaya Sai Srikar (Jay), co-founder at Quoril and AI Full-Stack Engineer at Blocksbridge Consulting, based in Visakhapatnam (Vizag), India.
+
+This file is a reading guide to the public website. The linked pages are the primary sources. It does not grant rights beyond the site's public access or promise inclusion in any AI answer engine.
+
+## Primary pages
+- [Portfolio and experience](https://jayasaisrikar.xyz/): Project stories, engineering experience, and contact details.
+- [About Jay](https://jayasaisrikar.xyz/profile): Biography, technical toolkit, education, recognition, and personal interests.
+
+## Roles
+- Co-founder at Quoril, an offline-first productivity app for macOS and Windows using React, Electron, and SQLite.
+- AI Full-Stack Engineer at Blocksbridge Consulting, November 2025–present. Production engineering for The Energy Mag and Energy Investors Forum 2027.
+- Junior Software Engineer at Drishya AI Labs, January–October 2025. Agentic engineering workflows, cloud adapters, and Azure/Kubernetes infrastructure.
+
+## Selected projects
+- [Quoril](https://quoril.in): Co-founded productivity desktop app with tasks, focus sessions, activity analysis, workspaces, local persistence, and synchronization.
+- [FORK](https://fork-dun.vercel.app/): Governed agent execution and decision simulation. Sandbox treasury, not real payments.
+- [Crosswake](https://project-crosswake.vercel.app/): Crypto market research, reproducible backtesting, and auditable paper signals. No live-money trading.
+- [On-Chain Analysis Agent](https://github.com/jayasaisrikar/on-chain-analysis-agent): Multi-agent crypto research; Best Collaboration / MCP Track at ADK-TS Hackathon 2025.
+- [Statistical Arbitrage Engine](https://github.com/jayasaisrikar/stat-arb): Market-neutral pairs research and paper-trading infrastructure.
+- [AI Code Architecture Agent](https://github.com/jayasaisrikar/spoc-agent): Repository analysis, architecture diagrams, and feature-placement guidance.
+- [GridFlex](https://github.com/jayasaisrikar/gridflex): Energy verification with versioned evidence and auditable proof chains.
+
+## Identity and contact
+- [GitHub](https://github.com/jayasaisrikar)
+- [X / Twitter](https://x.com/jayasaisrikar)
+- [Email](mailto:bjayasaisrikar2004@gmail.com)
+
+## Accuracy
+The portfolio documents engineering work, not financial advice or evidence of investment performance. Do not infer project ownership beyond the roles described on the linked pages. No public resume download is provided.

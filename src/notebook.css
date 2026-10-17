@@ -512,3 +512,6 @@ html::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
   .hero-bottom > span:first-child { line-height: 1.9; }
   .hero-sketch::before { inset: -5% -12%; }
 }
+.not-found-page { padding-block: var(--space-3xl); }
+.not-found-page h1 { font-size: clamp(2.5rem, 6vw, 5rem); margin-block: var(--space-lg); }
+.not-found-page p { color: var(--color-ink-2); margin-bottom: var(--space-lg); }

@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Jay’s field notes
 
-# Run and deploy your AI Studio app
+Personal portfolio of Jaya Sai Srikar — Quoril co-founder and AI Full-Stack Engineer.
 
-This contains everything you need to run your app locally.
+Canonical site: https://jayasaisrikar.xyz
 
-View your app in AI Studio: https://ai.studio/apps/7daadfcc-71fb-4cdf-9aac-213f5742843b
+## Development
 
-## Run Locally
+- `npm ci`
+- `npm run dev`
+- `npm run lint`
 
-**Prerequisites:**  Node.js
+## Production and SEO checks
 
+- `npm run build` builds the client, server-renders `/`, `/profile`, and a no-index `404.html`, and generates the sitemap and robots file.
+- `npm run check:seo` checks the emitted HTML, structured data, metadata, crawl files, social image, and resume exclusion.
+- `npm run preview` serves the production output for local review.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Vercel serves the generated files directly using clean URLs. There is deliberately no catch-all rewrite to the homepage: missing URLs must return HTTP 404. Configure the apex domain in Vercel and redirect alternate domains to it.
+
+## Search and AI discovery
+
+`src/lib/seo.ts` owns the official domain, per-route titles/descriptions, canonicals, social metadata, and JSON-LD graph. `Seo.tsx` keeps metadata correct during client navigation. `src/entry-server.tsx` renders full content at build time; `src/main.tsx` hydrates it. Static content is visible without JavaScript; client navigation and interactive controls remain available.
+
+The graph describes the Person, WebSite, WebPage/ProfilePage, Quoril founder relationship, employers, breadcrumbs, and project list using visible public facts. It does not invent ratings, dates, availability, project results, or financial performance.
+
+`public/llms.txt` is a supplemental reading guide, not an established ranking requirement or a guarantee of AI citations. Maintain it when public roles or projects change. Google’s AI search guidance uses ordinary SEO fundamentals; no special AI schema is required. The wildcard robots rule permits search crawlers, including AI search crawlers, to access the public pages. CDN/WAF policies can still block them independently.
+
+The social card is a committed 1200×630 PNG; its editable vector source is `public/social-card.svg`. Update both together. No resume asset is published.
+
+## After deployment
+
+1. Check live `/`, `/profile`, `/robots.txt`, `/sitemap.xml`, `/llms.txt`, and `/social-card.png` return the correct content. Confirm a random missing URL returns HTTP 404.
+2. Verify domain ownership in Google Search Console and Bing Webmaster Tools, then submit `https://jayasaisrikar.xyz/sitemap.xml`.
+3. Run Google URL Inspection and Rich Results Test on both pages. A valid schema does not guarantee a rich result.
+4. Inspect social previews and monitor indexing, branded queries, and referrals. Avoid changing sitemap modification dates unless the content materially changes.
+
+These account-side steps require the owner’s Search Console / Webmaster Tools access. The repository does not contain verification tokens or analytics credentials.
