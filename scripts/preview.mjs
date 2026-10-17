@@ -1,5 +1,8 @@
 import express from 'express';
 import { resolve } from 'node:path';
+import { handleApi } from '../server/integrations.mjs';
+import { config } from 'dotenv';
+config({ path: '.env.local', quiet: true });
 
 // Mirrors Vercel clean URLs and real 404 responses for local production checks.
 const option = (name, fallback) => {
@@ -9,6 +12,7 @@ const option = (name, fallback) => {
 const root = resolve('dist');
 const app = express();
 app.enable('strict routing');
+app.use((req, res, next) => { handleApi(req, res).then(handled => { if (!handled) next(); }).catch(next); });
 app.get('/index.html', (_req, res) => res.redirect(301, '/'));
 app.get(['/profile.html', '/profile/', '/profile/index.html'], (_req, res) => res.redirect(301, '/profile'));
 app.use(express.static(root, { extensions: ['html'], redirect: false }));

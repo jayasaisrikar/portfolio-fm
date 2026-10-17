@@ -3,10 +3,20 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 import { renderHead } from './src/lib/seo';
+import { handleApi } from './server/integrations.mjs';
+import { config } from 'dotenv';
+config({ path: '.env.local', quiet: true });
 
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss(), {
+      name: 'portfolio-data-api',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          handleApi(req, res).then(handled => { if (!handled) next(); }).catch(next);
+        });
+      },
+    }, {
       name: 'development-page-metadata',
       apply: 'serve',
       transformIndexHtml(html, context) {

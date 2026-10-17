@@ -6,6 +6,8 @@ import { projects } from '../data/portfolio';
 import Experience from '../components/Experience';
 import StarWarsDoodle from '../components/StarWarsDoodle';
 import Reveal from '../components/Reveal';
+import Workbench from '../components/Workbench';
+import ForkPlayground from '../components/ForkPlayground';
 import { useStaticDocument } from '../lib/rendering';
 
 const projectStories = [
@@ -44,7 +46,7 @@ export default function Landing() {
         const project = projects.find(p => p.id === story.id)!;
         return <Reveal from={index % 2 ? 'right' : 'left'} className={`project-story ${index % 2 ? 'story-reversed' : ''}`} key={story.id}>
           <a className="project-picture" href={project.demoLink!} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title}`}><ProjectArt kind={story.id} /><span className="picture-action">Take a look</span></a>
-          <div className="project-writing"><span className="tiny-label">{story.label}</span><h3>{story.heading}</h3><p>{story.body}</p><details className="project-detail"><summary>A little under the hood <span>+</span></summary><p>{story.detail}</p></details><span className="project-stack">{story.tags}</span><div className="project-links"><a className="text-link" href={project.demoLink!} target="_blank" rel="noreferrer">Visit {project.title}</a>{project.repoLink && <a className="quiet-link" href={project.repoLink} target="_blank" rel="noreferrer">Source code</a>}</div></div>
+          <div className="project-writing"><span className="tiny-label">{story.label}</span><h3>{story.heading}</h3><p>{story.body}</p><details className="project-detail"><summary>A little under the hood <span>+</span></summary><p>{story.detail}</p></details><span className="project-stack">{story.tags}</span><div className="project-links"><a className="text-link" href={project.demoLink!} target="_blank" rel="noreferrer">Visit {project.title}</a>{story.id === 'fork' && <a className="quiet-link" href="#fork-playground">Try the mini demo</a>}{project.repoLink && <a className="quiet-link" href={project.repoLink} target="_blank" rel="noreferrer">Source code</a>}</div></div>
         </Reveal>;
       })}</div>
       <Reveal className="more-work"><div className="more-work-heading"><Asterisk /><h3>More rabbit holes.</h3><span className="hand-note">Because one project is never enough.</span></div>{projects.slice(3).map(p => <details className="work-index-row" key={p.id}><summary><span>{p.title}</span><span className="work-index-category">{p.badge}</span><span className="index-plus">+</span></summary><div className="work-index-content"><p>{p.fullDescription}</p><a className="text-link" href={p.repoLink!} target="_blank" rel="noreferrer">Explore on GitHub</a></div></details>)}</Reveal>
@@ -52,6 +54,8 @@ export default function Landing() {
 
     <section id="about" className="about-note page-width"><Reveal className="about-note-inner"><div className="note-margin"><span className="tiny-label">A NOTE ABOUT THE PERSON</span><StarWarsDoodle kind="vader" /><span className="hand-note">There’s a person<br />behind the commits.</span></div><div className="about-note-copy"><h2>I like the messy bit<br />between idea and reality.</h2><p>The part where you have to ask better questions, change your mind, and make something actually work. That’s where I feel most at home.</p><p>I’m based in Vizag, on India’s east coast. My work lives somewhere between AI, product engineering, and infrastructure. Away from the screen, I’m usually thinking about films, finding a new place to wander, or going down another rabbit hole.</p><Link className="text-link" to="/profile">A little more about me</Link></div></Reveal></section>
 
+    <ForkPlayground />
+    <Workbench />
     <Experience />
 
     <section className="off-clock page-width"><Reveal className="off-clock-inner"><div><StarWarsDoodle kind="deathstar" className="off-clock-doodle" /><span className="tiny-label">CLOSE THE LAPTOP FOR A SECOND</span><h2>There’s more<br />to the plot.</h2><p>Films with a little world-building. Places with a different pace. A good story, in almost any form.</p><Link className="text-link" to="/profile">Open my personal notebook</Link></div><div className="film-note"><div className="ticket-top"><span>JAY’S WATCHLIST</span><span>ADMIT ONE</span></div><div className="ticket-body"><span className="hand-note">If you’re picking a film tonight…</span><AnimatePresence mode="wait" initial={false}><motion.h3 key={film} aria-live="polite" initial={{ opacity: 0, y: reduced ? 0 : 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -10 }} transition={{ duration: 0.25 }}>{films[film]}</motion.h3></AnimatePresence><button className="text-link" onClick={() => setFilm(f => (f + 1) % films.length)}>Another one? <span>↻</span></button></div><div className="ticket-bottom"><span>NO SPOILERS. JUST GOOD STORIES.</span><span><Asterisk className="ticket-star" /></span></div></div></Reveal></section>
