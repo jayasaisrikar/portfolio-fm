@@ -14,6 +14,7 @@ This file is a reading guide to the public website. The linked pages are the pri
 - Junior Software Engineer at Drishya AI Labs, January–October 2025. Agentic engineering workflows, cloud adapters, and Azure/Kubernetes infrastructure.
 
 ## Selected projects
+- [Outspool](https://github.com/jayasaisrikar/outspool): Work-in-progress, self-hosted outbound with an AI copilot, user-owned models and mailboxes, human approvals, and MCP access.
 - [Quoril](https://quoril.in): Co-founded productivity desktop app with tasks, focus sessions, activity analysis, workspaces, local persistence, and synchronization.
 - [FORK](https://fork-dun.vercel.app/): Governed agent execution and decision simulation. Sandbox treasury, not real payments.
 - [Crosswake](https://project-crosswake.vercel.app/): Crypto market research, reproducible backtesting, and auditable paper signals. No live-money trading.

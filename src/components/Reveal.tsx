@@ -12,5 +12,5 @@ export default function Reveal({ children, className = '', from = 'up', as = 'di
   const y = reduced || from !== 'up' ? 0 : 64;
   const [seen, setSeen] = useState(staticDocument);
   const Tag = tags[as];
-  return <Tag className={`${className} reveal-stagger${seen ? ' is-revealed' : ''}`} initial={staticDocument ? false : { opacity: 0, x, y, scale: reduced ? 1 : 0.97 }} whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }} onViewportEnter={() => setSeen(true)} viewport={{ once: true, amount: 0.2 }} transition={{ duration: reduced ? 0.1 : 1, ease: [0.22, 1, 0.36, 1] }}>{children}</Tag>;
+  return <Tag className={`${className} reveal-stagger${seen ? ' is-revealed' : ''}`} initial={staticDocument || reduced ? false : { opacity: 0, x, y, scale: reduced ? 1 : 0.97 }} whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }} onViewportEnter={() => setSeen(true)} viewport={{ once: true, amount: 0.2 }} transition={{ duration: reduced ? 0.1 : 1, ease: [0.22, 1, 0.36, 1] }}>{children}</Tag>;
 }

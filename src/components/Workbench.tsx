@@ -18,8 +18,8 @@ export default function Workbench() {
     return () => { clearTimeout(timeout); abort.abort(); };
   }, []);
   return <section id="workbench" className="live-workbench page-width">
-    <Reveal><div className="section-intro"><div><span className="tiny-label">THE WORKBENCH / PUBLIC EXPERIMENTS</span><h2>Still making.<br />Still figuring it out.</h2></div><div className="workbench-status"><span className="hand-note">A peek at what’s moving.</span><p>{feed.status === 'fresh' ? 'Recently pushed public repositories.' : feed.status === 'stale' ? 'A saved look at my public repositories.' : 'A few selected public projects.'}</p>{feed.fetchedAt && <span>Checked {date(feed.fetchedAt)}</span>}</div></div>
+    <Reveal><div className="section-intro"><div><span className="tiny-label">THE OPEN WORKBENCH</span><h2>Always a<br /><span className="serif">work in progress.</span></h2></div><div className="workbench-status"><p>{feed.status === 'fresh' ? 'Recently pushed public repositories.' : feed.status === 'stale' ? 'A saved look at my public repositories.' : 'A few selected public projects.'}</p>{feed.fetchedAt && <span>Checked {date(feed.fetchedAt)}</span>}</div></div>
     <div className="repo-ledger">{feed.repos.map((repo, i) => <a className="repo-entry" href={repo.url} key={repo.url} target="_blank" rel="noreferrer"><span className="repo-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{repo.name.replace(/-/g, ' ')}</h3><p>{repo.description}</p><div className="repo-facts">{repo.language && <span>{repo.language}</span>}{repo.pushedAt && <span>Pushed {date(repo.pushedAt)}</span>}{repo.stars !== null && <span>{repo.stars} {repo.stars === 1 ? 'star' : 'stars'}</span>}</div></div><span className="repo-arrow" aria-hidden="true">↗</span></a>)}</div>
-    <a className="text-link workbench-github" href="https://github.com/jayasaisrikar" target="_blank" rel="noreferrer">Wander through my GitHub</a></Reveal>
+    <a className="text-link workbench-github" href="https://github.com/jayasaisrikar" target="_blank" rel="noreferrer">More on GitHub</a></Reveal>
   </section>;
 }

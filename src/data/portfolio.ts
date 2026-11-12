@@ -1,5 +1,15 @@
 export const projects = [
   {
+    id: 'outspool',
+    title: 'Outspool',
+    description: 'Self-hosted, email-first outbound with an AI copilot, bring-your-own models, and human-approved workflows. Currently in development.',
+    fullDescription: 'A work-in-progress outbound platform that builds a go-to-market knowledge base from a company website, discovers leads from market signals, and drafts email in the company’s voice. Human-approved leads enter sequences sent through the user’s own mailbox; replies stop the sequence. A shared tool registry powers the web copilot and MCP access, with reviewable feedback proposals, PostgreSQL-backed jobs, and a model usage ledger.',
+    tech: ['TypeScript', 'React', 'Hono', 'PostgreSQL', 'Drizzle', 'MCP'],
+    demoLink: null,
+    repoLink: 'https://github.com/jayasaisrikar/outspool',
+    badge: 'CURRENTLY BUILDING'
+  },
+  {
     "id": "fork",
     "title": "FORK",
     "description": "Governed agent execution: simulate competing decisions, approve one plan, and execute with a verifiable audit trail.",

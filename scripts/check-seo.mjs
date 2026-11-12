@@ -19,7 +19,7 @@ for (const [path, html] of [['/', home], ['/profile', profile]]) {
   assert(schema['@graph'].some(entity => entity['@type'] === (path === '/' ? 'WebPage' : 'ProfilePage')));
 }
 assert(home.includes('From breaking news to publication') && home.includes('Drishya AI Labs'), 'Experience must be in the initial HTML');
-assert(profile.includes('Inside the toolbox.') && profile.includes('Forrest Gump'), 'Profile content must be in the initial HTML');
+assert(profile.replace(/<[^>]+>/g, '').includes('Inside the toolbox.') && profile.includes('Forrest Gump'), 'Profile content must be in the initial HTML');
 assert.notEqual(home.match(/<title[^>]*>(.*?)<\/title>/s)[1], profile.match(/<title[^>]*>(.*?)<\/title>/s)[1]);
 assert(notFound.includes('noindex, follow') && !notFound.includes('rel="canonical"'));
 const sitemap = await readFile('dist/sitemap.xml', 'utf8');

@@ -1,25 +1,60 @@
+/* Halftone Press — mid-century magazine spot illustration, two-color offset
+ * lithography on pale aged newsprint. Two inks, one paper, no third colour:
+ * every tint below is a press ink screened onto the newsprint sheet.
+ */
 :root {
-  --color-paper: #f5f2e9;
-  --color-paper-2: #ebe7db;
-  --color-paper-bright: #fffcf3;
-  --color-ink: #252e43;
-  --color-ink-2: #565d6c;
-  --color-muted: #686e7a;
-  --color-rule: #cecfc8;
-  --color-accent: #2949b8;
-  --color-accent-ink: #faf8f0;
-  --color-focus: #2949b8;
-  --color-wash: #e2e8ec;
-  --color-wash-deep: #cbd6e4;
-  --color-art: #203f9c;
-  --color-art-rule: #8a9ed4;
+  --press-newsprint: #f5f0e6;
+  --press-blue: #1d3557;
+  --press-red: #e63946;
+  --press-steel: #457b9d;
+
+  /* Screened inks */
+  --ink-secondary: color-mix(in srgb, var(--press-blue) 76%, var(--press-newsprint));
+  --ink-muted: color-mix(in srgb, var(--press-blue) 72%, var(--press-newsprint));
+  --ink-hairline: color-mix(in srgb, var(--press-blue) 26%, var(--press-newsprint));
+  --ink-hairline-strong: color-mix(in srgb, var(--press-blue) 46%, var(--press-newsprint));
+  --paper-flood: color-mix(in srgb, var(--press-blue) 5%, var(--press-newsprint));
+  --paper-flood-2: color-mix(in srgb, var(--press-blue) 9%, var(--press-newsprint));
+  --red-wash: color-mix(in srgb, var(--press-red) 9%, var(--press-newsprint));
+  /* Small type: press red overprinted on the blue key reads darker and holds up. */
+  --red-text: color-mix(in srgb, var(--press-red) 80%, var(--press-blue));
+  --red-rule: color-mix(in srgb, var(--press-red) 34%, var(--press-newsprint));
+  --steel-wash: color-mix(in srgb, var(--press-steel) 14%, var(--press-newsprint));
+  --on-ink: var(--press-newsprint);
+  --on-ink-muted: color-mix(in srgb, var(--press-newsprint) 72%, var(--press-blue));
+  --on-ink-rule: color-mix(in srgb, var(--press-newsprint) 28%, var(--press-blue));
+
+  --color-paper: var(--press-newsprint);
+  --color-paper-2: var(--paper-flood);
+  --color-paper-bright: var(--press-newsprint);
+  --color-ink: var(--press-blue);
+  --color-ink-2: var(--ink-secondary);
+  --color-muted: var(--ink-muted);
+  --color-rule: var(--ink-hairline);
+  --color-accent: var(--press-red);
+  --color-accent-ink: var(--press-newsprint);
+  --color-focus: var(--press-red);
+  --color-wash: var(--steel-wash);
+  --color-wash-deep: var(--paper-flood-2);
+  --color-art: var(--press-blue);
+  --color-art-rule: var(--press-steel);
   --color-transparent: transparent;
-  --color-grid: #2949b80b;
-  --color-shadow: #252e4310;
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-outlier: 'Caveat', cursive;
+  --color-grid: color-mix(in srgb, var(--press-steel) 22%, transparent);
+  --color-shadow: color-mix(in srgb, var(--press-blue) 14%, transparent);
+
+  --color-night: var(--press-blue);
+  --color-night-soft: color-mix(in srgb, var(--press-blue) 88%, var(--press-steel));
+  --color-light: var(--press-newsprint);
+  --color-light-muted: var(--on-ink-muted);
+  --color-light-rule: var(--on-ink-rule);
+  --color-lime: var(--press-red);
+
+  --font-display: 'Instrument Serif', 'Bodoni Moda Variable', Georgia, serif;
+  --font-body: 'Manrope Variable', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Bodoni Moda Variable', Georgia, serif;
+  --font-outlier: 'Instrument Serif', Georgia, serif;
   --font-sans: var(--font-body);
+
   --space-3xs: 0.25rem;
   --space-2xs: 0.5rem;
   --space-xs: 0.75rem;
@@ -30,19 +65,23 @@
   --space-2xl: 4.5rem;
   --space-3xl: 7rem;
   --space-4xl: 10rem;
-  --page-gutter: clamp(1.25rem, 5.5vw, 6rem);
+  --page-gutter: clamp(1.25rem, 5vw, 5.5rem);
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
   --text-lg: 1.25rem;
   --text-xl: 1.75rem;
   --text-2xl: 2.5rem;
-  --text-display: clamp(3.8rem, 8.2vw, 8.5rem);
+  --text-display: clamp(3.6rem, 9vw, 8rem);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-short: 200ms;
-  --dur-long: 650ms;
+  --ease-press: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-short: 220ms;
+  --dur-long: 700ms;
   --rule-hair: 1px;
-  --radius-small: 4px;
-  --radius-card: 10px;
-  --radius-pill: 999px;
+  --radius-small: 0px;
+  --radius-card: 0px;
+  --radius-pill: 0px;
+
+  --screen-pitch: 6px;
+  --reg-offset: 2px;
 }

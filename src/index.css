@@ -1,41 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Typography is self-hosted by premium.css. */
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --color-accent: #E0FF00;
+  --color-accent: #E63946;
 }
 
 @layer base {
   body {
-    @apply bg-[#0A0A0A] text-[#F5F5F5] font-sans antialiased selection:bg-accent selection:text-black scroll-smooth;
+    @apply bg-[#F5F0E6] text-[#1D3557] font-sans antialiased selection:bg-accent selection:text-[#F5F0E6] scroll-smooth;
   }
-}
-
-.stroke-text {
-  -webkit-text-stroke: 1px #F5F5F5;
-  color: transparent;
 }
 
 /* Utilities for smooth hiding/showing Scrollbar if needed */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #F5F0E6;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  background: #C9C3B5;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #457B9D;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-:focus-visible { outline: 2px solid #E0FF00; outline-offset: 6px; }
+:focus-visible { outline: 2px solid #E63946; outline-offset: 5px; }
 .custom-cursor { display: none; }
 @media (pointer: fine) { .custom-cursor { display: block; } }
 @media (prefers-reduced-motion: reduce) {
@@ -47,3 +41,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Shared portfolio theme overrides; retain Tailwind and existing utilities. */
+::-webkit-scrollbar-track { background: var(--color-paper); }
+::-webkit-scrollbar-thumb { background: var(--ink-hairline-strong); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }

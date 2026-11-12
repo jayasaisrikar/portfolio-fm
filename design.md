@@ -1,109 +1,25 @@
-# Design — Jay's field notes
+# Design — Jaya Sai Srikar
 
-A shared system for the homepage and personal notebook. The user selected “Playful field notebook — paper, blue ink, sketches.”
+## Direction
+Halftone Press: a mid-century magazine spot-illustration voice, printed in two-colour offset lithography on pale aged newsprint. This replaces the coastal photographic direction. The site reads as a composed print portfolio — ink, paper, ruled columns and cut-paper plates — rather than a motion showreel.
 
-## Audience and purpose
-Collaborators and people hiring Jay. Explore real work, meet the person behind it, and start a conversation. No resume downloads or public resume assets.
+## Shared system
+Newsprint sheet, press-blue key, press-red spot and steel screens. Homepage: magazine masthead hero with a tabletop radio plate, four project plates on an asymmetric grid, a duotone halftone portrait band, a ruled experience ledger, a printed FORK proof sheet, a repository ledger, and an ink-flood colophon footer. Profile: masthead hero with a microphone plate, halftone panorama, film shelf as a printed index, places and toolkit as ruled lists.
 
-## Genre and structure
-Editorial with playful illustrative details. Split Studio homepage: personal introduction opposite an interactive ink drawing, followed by alternating project stories. Long Document personal page: short biography, cinema notes, places, education. Masthead navigation (N6, compact and asymmetric), letter-close footer (Ft6). Both routes share the same identity.
+## Palette and tokens
+Four values only, all in `tokens.css`: newsprint `#F5F0E6`, press blue `#1D3557`, press red `#E63946`, steel `#457B9D`. Every tint in the interface is a press ink screened onto the newsprint sheet, expressed with `color-mix` (`--ink-secondary`, `--ink-muted`, `--ink-hairline`, `--paper-flood`). Small text uses `--red-text`, the red ink overprinted on blue, so labels keep contrast. No third colour is introduced anywhere, including the favicon, the social card and the illustration fills.
 
-## Theme and typography
-Paper #f5f2e9, ink #252e43, accent blue #2949b8, muted ink #565d6c. Bricolage Grotesque display, DM Sans body, Caveat only for handwritten marginal notes. Headings stay upright. All tokens are in tokens.css and imported by the page stylesheet. Additional color values belong there.
+## Typography
+Instrument Serif for display, project titles and the italics that carry the red ink. Manrope for body, navigation, labels and all caps micro-type. Labels are uppercase, letterspaced and small; display lines are set tight and low. Headings stay roman; emphasis is red, not weight.
 
-## Layout
-Maximum width 1320px. Fluid page gutters, strong left alignment, open whitespace and quiet rules. No stock photography, fake browser frames, glass, decorative dashboards, or 3D background scenes. Backgrounds use subtle SVG paper grain, blue-ink orbital charts, coastal contours, and local graph-paper patterns. Quoril co-founder is a primary part of Jay’s identity and experience. Illustrations are original SVG diagrams, clearly presented as illustrations rather than screenshots.
+## Print language
+`HalftoneArt` renders six original spot illustrations — radio, rotary telephone, semaphore signal, ticker, typewriter, microphone — as cut-paper geometry: flat blue planes, red accents, steel dot screens for shadow, and a red plate struck a few pixels off register. The registration sliver drifts further on hover. Photographs are printed as duotone halftone: grayscale multiply over a steel-to-red plate with a dot screen on top.
 
 ## Motion
-One short staggered introduction, subtle reveals, drawn paths, tactile link movement, an explicitly triggered idea-machine sketch. No scroll hijacking, custom cursor, autoplay audio, or continuous decorative animation. Reduced motion removes spatial movement and keeps content immediately usable.
+Ink settling rather than interface animation. GSAP runs the title-mask entrance, one short stagger, photographic parallax and quiet scroll reveals. Hover states change ink, not geometry — underline to red, paper to red wash, registration offset. No tilt, no magnetic pull, no scroll hijacking. The global motion toggle pauses everything; reduced motion renders a still sheet.
 
-## Interaction
-Native links and disclosure elements. Visible focus outlines. Meaningful aria labels, decorative art hidden from assistive technology, no content available only on hover. Mobile nav remains visible without a menu. Contact uses email and actual social destinations.
+## Content and interactions
+Copy, project facts, links, the FORK demo and the repository feed are unchanged. Illustrations are conceptual, never screenshots. No invented metrics, badges or captions. Routes, prerendering, accessibility and keyboard focus are preserved; focus uses the red ink.
 
-## Content
-Use verified existing professional facts and project links. Personal interests derive from the prior portfolio. Do not invent testimonials, availability, success metrics, or a likeness of Jay. The hero doodle is an idea machine, not a portrait. User-requested Star Wars marginalia (X-wing, Vader, R2-D2, Death Star) use original blue-ink SVG line art. Experience is a readable, contribution-led timeline with sourced outcomes.
-
-## Exports
-
-### CSS tokens
-```css
-:root {
-  --color-paper: #f5f2e9;
-  --color-paper-2: #ebe7db;
-  --color-paper-bright: #fffcf3;
-  --color-ink: #252e43;
-  --color-ink-2: #565d6c;
-  --color-muted: #686e7a;
-  --color-rule: #cecfc8;
-  --color-accent: #2949b8;
-  --color-accent-ink: #faf8f0;
-  --color-focus: #2949b8;
-  --color-wash: #e2e8ec;
-  --color-wash-deep: #cbd6e4;
-  --color-art: #203f9c;
-  --color-art-rule: #8a9ed4;
-  --color-transparent: transparent;
-  --color-shadow: #252e4310;
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-outlier: 'Caveat', cursive;
-  --font-sans: var(--font-body);
-  --space-3xs: 0.25rem;
-  --space-2xs: 0.5rem;
-  --space-xs: 0.75rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4.5rem;
-  --space-3xl: 7rem;
-  --space-4xl: 10rem;
-  --page-gutter: clamp(1.25rem, 5.5vw, 6rem);
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-md: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.75rem;
-  --text-2xl: 2.5rem;
-  --text-display: clamp(3.8rem, 8.2vw, 8.5rem);
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-short: 200ms;
-  --dur-long: 650ms;
-  --rule-hair: 1px;
-  --radius-small: 4px;
-  --radius-card: 10px;
-  --radius-pill: 999px;
-}
-```
-
-### Tailwind v4
-```css
-@theme {
-  --color-paper: #f5f2e9;
-  --color-ink: #252e43;
-  --color-accent: #2949b8;
-  --font-display: "Bricolage Grotesque", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-  --spacing-md: 1.5rem;
-}
-```
-
-### DTCG
-```json
-{"color":{"paper":{"$value":"#f5f2e9","$type":"color"},"ink":{"$value":"#252e43","$type":"color"},"accent":{"$value":"#2949b8","$type":"color"}},"font":{"display":{"$value":"Bricolage Grotesque","$type":"fontFamily"},"body":{"$value":"DM Sans","$type":"fontFamily"}}}
-```
-
-### Component variables
-```css
-:root {
-  --background: var(--color-paper);
-  --foreground: var(--color-ink);
-  --primary: var(--color-accent);
-  --primary-foreground: var(--color-accent-ink);
-  --muted: var(--color-paper-2);
-  --muted-foreground: var(--color-muted);
-  --border: var(--color-rule);
-  --ring: var(--color-focus);
-  --radius: var(--radius-small);
-}
-```
+## Responsive
+Verified at 320, 375, 414, 768 and desktop. Single column below 768px, plates crop to a near-square, masthead rows collapse to two cells, the footer stacks. Root overflow is clipped and no horizontal scroll appears at any checked width.

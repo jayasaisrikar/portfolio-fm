@@ -1,10 +1,7 @@
-import { useEffect, useRef, type CSSProperties } from 'react';
-import { motion, useInView, useReducedMotion } from 'motion/react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Asterisk } from '../components/NotebookArt';
-import StarWarsDoodle from '../components/StarWarsDoodle';
-import Reveal from '../components/Reveal';
 import FilmShelf from '../components/FilmShelf';
+import HalftoneArt from '../components/HalftoneArt';
 
 const films = [
   { title: 'Forrest Gump', year: '1994', note: 'Life is random, yet everything connects. A reminder that showing up consistently beats being the smartest in the room.' },
@@ -29,34 +26,23 @@ const toolkit = [
   ['Keeping it running', 'PostgreSQL, SQLite, MySQL, TimescaleDB, Redis, BullMQ, Docker, Kubernetes, Terraform, AWS, Azure, Linux, GitHub Actions, Grafana'],
   ['Following the evidence', 'Backtesting, pairs trading, Kalman filters, risk and cost modeling, DeFi, EVM/L2s, cross-chain systems, on-chain analytics'],
 ];
-const trail = 'M18 114c73 57 40-144 144-52s83 19 67-3';
-
-function TravelSketch() {
-  const reduced = useReducedMotion();
-  const flight = useRef<SVGAnimateMotionElement>(null);
-  const svg = useRef<SVGSVGElement>(null);
-  const inView = useInView(svg, { once: true, amount: 0.6 });
-  useEffect(() => { if (inView && !reduced) flight.current?.beginElement(); }, [inView, reduced]);
-  return <svg ref={svg} className="travel-sketch" viewBox="0 0 280 150" fill="none" aria-hidden="true">
-    <motion.path d={trail} stroke="currentColor" strokeWidth="2" strokeDasharray="4 6" initial={{ opacity: reduced ? 1 : 0.25 }} animate={inView ? { opacity: 1 } : undefined} transition={{ duration: 2.4 }} />
-    <g className={inView && !reduced ? 'plane-bob' : ''}>
-      <g transform={reduced ? 'translate(229 59)' : undefined}>
-        {!reduced && <animateMotion ref={flight} path={trail} dur="2.4s" begin="indefinite" fill="freeze" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.45 0 0.25 1" />}
-        <path d="m-21-29 46-15-13 45-11-20-22-10Z m22 10 24-25" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-      </g>
-    </g>
-  </svg>;
-}
-
 export default function DetailedProfile() {
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, []);
-  return <main id="main-content" className="personal-notebook page-width">
-    <Link to="/" className="quiet-link back-home">← Back to my corner</Link>
-    <Reveal as="section" className="personal-intro"><div><span className="tiny-label">THE PERSON, BETWEEN THE PROJECTS</span><h1>A little less code.<br />A little more <span className="personal-me">me.</span></h1></div><span className="hand-note">Not everything<br />needs a README. <svg viewBox="0 0 120 55" aria-hidden="true"><path d="M7 5q15 43 99 34m-15-12 17 12-20 8" fill="none" stroke="currentColor" strokeWidth="2" /></svg></span></Reveal>
-    <Reveal as="section" className="personal-letter"><div className="letter-side"><Asterisk /><span className="hand-note">Hey, I’m Jay.</span></div><div><p className="letter-lede">I grew up by the coast in Vizag. I still like things that make the world feel a little bigger.</p><p>A good film. A city I haven’t figured out yet. An idea that starts as a small question and turns into a project I can’t put down.</p><p>Engineering is how I follow that curiosity. I like the part where a rough idea meets a real constraint — where you have to make a trade-off, learn something, and try again. My projects span AI systems, market research, and productivity tools, but the thread is the same: make something useful, and care about how it works.</p><p>I’m a co-founder at Quoril, where I build an offline-first productivity app for macOS and Windows. I’m also an AI Full-Stack Engineer at Blocksbridge Consulting. Before that, I worked on agentic engineering tools and cloud infrastructure at Drishya AI Labs. <Link to="/#experience">The work story is over here</Link></p><span className="hand-note letter-signature">Always a work in progress,<br />Jay.</span></div></Reveal>
-    <Reveal as="section" className="cinema-section"><div className="section-intro"><div><span className="tiny-label">THE UNOFFICIAL FILM CLUB</span><h2>Roll the credits.<br />Then talk about it.</h2></div><div className="cinema-intro-aside"><p>World-building, careful frames,<br />and stories that stick around.<br /><span className="hand-note">Yes, there’s a lot of Nolan.</span></p><StarWarsDoodle kind="vader" className="cinema-doodle" /></div></div><FilmShelf /><p className="film-index-label tiny-label">MORE FROM MY NOTEBOOK</p><Reveal className="film-shelf">{films.map((film, index) => <details className="film-row" key={film.title} style={{ '--i': index } as CSSProperties}><summary><span className="film-number">{String(index + 1).padStart(2, '0')}</span><span className="film-title">{film.title}</span><span className="film-year">{film.year}</span><span className="index-plus">+</span></summary><p>{film.note}</p></details>)}</Reveal></Reveal>
-    <Reveal as="section" className="places-section"><div><span className="tiny-label">A FEW PINS ON THE MAP</span><h2>A change<br />of scenery.</h2><p>Some places are home.<br />Others help you see it differently.</p><TravelSketch /></div><Reveal className="place-list">{places.map(([city, note], i) => <div key={city}><span className="place-index">{String(i + 1).padStart(2, '0')}</span><h3>{city}{city === 'Vizag' && <span className="hand-note">← home</span>}</h3><p>{note}</p></div>)}</Reveal></Reveal>
-    <Reveal as="section" className="toolkit-section"><div className="section-intro"><div><span className="tiny-label">THE STUFF I REACH FOR</span><h2>Inside the toolbox.</h2></div><p>Tools change. Curiosity helps.</p></div>{toolkit.map(([title, tools]) => <div className="toolkit-row" key={title}><h3>{title}</h3><p>{tools}</p></div>)}</Reveal>
-    <Reveal as="section" className="recognition-note"><Asterisk /><div><span className="tiny-label">A FEW MOMENTS ALONG THE WAY</span><h3>Good teams. Hard problems. A lot learned.</h3><p>Best Collaboration / MCP Track, ADK-TS Hackathon 2025.<br />Grand Finalist and Team Lead, Smart India Hackathon 2023.<br />Secretary, ACM JNTU-GV Student Chapter.</p><p>B.Tech in Information Technology · JNTU-GV · 2021–2025 · CGPA 8.24</p></div></Reveal>
+  return <main id="main-content">
+    <section className="profile-hero page-width">
+      <Link className="line-link" to="/">← Back to the work</Link>
+      <div className="profile-hero-grid">
+        <div><span className="tiny-label" data-entrance>Jaya Sai Srikar / a little more personal</span><h1 data-entrance>More than<br /><span className="serif">the work.</span></h1></div>
+        <div className="profile-plate" data-entrance><HalftoneArt kind="microphone" /></div>
+      </div>
+    </section>
+    <section className="profile-lede page-width" data-reveal><h2>Engineer by trade.<br /><span className="serif">Curious by default.</span></h2><div><p>I grew up by the coast in Vizag. I still like things that make the world feel a little bigger: a good film, a city I haven’t figured out yet, an idea I can’t put down.</p><p>Engineering is how I follow that curiosity. I like the point where a rough idea meets a real constraint — where you have to make a trade-off, learn something, and try again.</p><p>I’m an AI Full-Stack Engineer at Blocksbridge Consulting and a co-founder of Quoril, an offline-first productivity app for macOS and Windows. Before that, I worked on engineering copilots and cloud infrastructure at Drishya AI Labs.</p><p>My independent work spans AI agents, market data, research infrastructure, and now Outspool — a self-hosted outbound platform. I care about systems people can understand, question, and trust.</p><Link className="line-link" to="/#experience">Explore my experience ↗</Link></div></section>
+    <div className="profile-panorama"><img src="/images/ocean.jpg" alt="Ocean waves under soft coastal light" width="1600" height="900" loading="lazy" /><span>The coast has a way of putting things in perspective.</span></div>
+    <div className="page-width">
+      <section className="profile-section"><span className="tiny-label">OFF THE CLOCK / THE FILM SHELF</span><h2>For the love<br /><span className="serif">of a good story.</span></h2><p>World-building, careful frames, and films that stick around. Yes, there’s a lot of Nolan.</p><FilmShelf /><details className="complete-film-list"><summary className="line-link">Open the full watchlist +</summary><div className="film-shelf">{films.map((film, index) => <details className="film-row" key={film.title}><summary><span className="film-number">{String(index + 1).padStart(2, '0')}</span><span className="film-title">{film.title}</span><span className="film-year">{film.year}</span><span className="index-plus">+</span></summary><p>{film.note}</p></details>)}</div></details></section>
+      <section className="places-section"><div><span className="tiny-label">PLACES & PERSPECTIVES</span><h2>A change<br /><span className="serif">of scenery.</span></h2><p>Some places are home.<br />Others help you see it differently.</p></div><div className="place-list">{places.map(([city, note], i) => <div key={city}><span className="place-index">{String(i + 1).padStart(2, '0')}</span><h3>{city}</h3><p>{note}</p></div>)}</div></section>
+      <section className="toolkit-section profile-section"><div className="section-intro"><div><span className="tiny-label">HOW I BUILD</span><h2>Inside the <span className="serif">toolbox.</span></h2></div><p>Tools change. Curiosity helps.</p></div>{toolkit.map(([title, tools]) => <div className="toolkit-row" key={title}><h3>{title}</h3><p>{tools}</p></div>)}</section>
+      <section className="recognition-note"><div><span className="tiny-label">EDUCATION & RECOGNITION</span><h3>Good teams. Hard problems.<br />A lot learned.</h3><p>Best Collaboration / MCP Track, ADK-TS Hackathon 2025.<br />Grand Finalist and Team Lead, Smart India Hackathon 2023.<br />Secretary, ACM JNTU-GV Student Chapter.</p><p>B.Tech in Information Technology · JNTU-GV · 2021–2025 · CGPA 8.24</p></div></section>
+    </div>
   </main>;
 }

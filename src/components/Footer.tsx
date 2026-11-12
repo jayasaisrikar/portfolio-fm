@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import { Asterisk } from './NotebookArt';
-
+import { ArrowUpRight, Check, Copy } from 'lucide-react';
 export default function Footer() {
-  const [copied, setCopied] = useState(false);
-  const [copyError, setCopyError] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'error'>('idle');
   const email = 'bjayasaisrikar2004@gmail.com';
   async function copyEmail() {
-    try { await navigator.clipboard.writeText(email); setCopied(true); setCopyError(false); }
-    catch { setCopyError(true); }
+    try { await navigator.clipboard.writeText(email); setCopyStatus('copied'); }
+    catch { setCopyStatus('error'); }
   }
-  return <footer id="contact" className="notebook-footer page-width">
-    <div className="footer-letter"><div><span className="tiny-label">GOOD THINGS START WITH A CONVERSATION</span><h2>Got a curious idea?<br /><a href={`mailto:${email}`}>I’m all ears.</a></h2><p>Something to build, a film to recommend, or just a hello.</p></div><Asterisk className="footer-star" /></div>
-    <div className="footer-contact"><a href={`mailto:${email}`}>{email}</a><button onClick={copyEmail} className="copy-email" aria-label="Copy email address">{copied ? 'Copied ✓' : 'Copy email'}</button><span role="status" className="copy-status">{copyError ? 'Please use the email link to get in touch.' : ''}</span></div>
-    <div className="footer-bottom"><span className="hand-note">See you around, Jay.</span><div className="social-links"><a href="https://github.com/jayasaisrikar" target="_blank" rel="noreferrer">GitHub</a><a href="https://x.com/jayasaisrikar" target="_blank" rel="noreferrer">X / Twitter</a><a href="https://quoril.in" target="_blank" rel="noreferrer">Quoril</a></div><span>Made with intent. © {new Date().getFullYear()}</span></div>
+  return <footer id="contact" className="portfolio-footer">
+    <div className="page-width">
+      <div className="footer-topline"><span className="tiny-label">HAVE SOMETHING IN MIND?</span><span className="tiny-label">LET’S MAKE IT REAL.</span></div>
+      <a className="footer-invitation" href={`mailto:${email}`}>Good things start<br />with a <span className="serif">conversation.</span><ArrowUpRight aria-hidden="true" /></a>
+      <div className="footer-email"><a href={`mailto:${email}`}>{email}</a><button type="button" onClick={copyEmail} aria-label="Copy email address">{copyStatus === 'copied' ? <Check size={17} /> : <Copy size={17} />}</button><span role="status">{copyStatus === 'copied' ? 'Copied' : copyStatus === 'error' ? 'Use the email link to get in touch.' : ''}</span></div>
+      <div className="footer-baseline"><a className="portfolio-wordmark" href="#main-content" aria-label="Back to top">jay.</a><span>Thoughtfully built, from Vizag.</span><div><a href="https://github.com/jayasaisrikar" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={13} /></a><a href="https://x.com/jayasaisrikar" target="_blank" rel="noreferrer">Twitter / X <ArrowUpRight size={13} /></a><a href="https://quoril.in" target="_blank" rel="noreferrer">Quoril <ArrowUpRight size={13} /></a></div><span>© {new Date().getFullYear()}</span></div>
+    </div>
   </footer>;
 }

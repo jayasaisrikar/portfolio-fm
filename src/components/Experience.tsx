@@ -1,20 +1,19 @@
-import StarWarsDoodle from './StarWarsDoodle';
 import Reveal from './Reveal';
 
 export default function Experience() {
   return <section id="experience" className="experience-notes page-width">
     <div className="experience-layout experience-expanded">
       <Reveal className="experience-heading">
-        <span className="tiny-label">EXPERIENCE / THE WORK BEHIND THE WORK</span>
-        <h2>A few chapters<br />in the making.</h2>
+        <span className="tiny-label">EXPERIENCE</span>
+        <h2>Good ideas.<br /><span className="serif">Real experience.</span></h2>
         <p>Co-founding Quoril, building engineering copilots, and shipping publishing pipelines and event platforms. Here’s where I’ve been putting the pieces together.</p>
-        <StarWarsDoodle kind="r2" />
-        <span className="hand-note career-margin-note">Build it. Learn from it.<br />Make it better.</span>
+
+
       </Reveal>
       <div className="career-list career-timeline">
 
         <Reveal className="career-entry career-chapter">
-          <div className="career-chapter-top"><span className="career-dates">NOV 2025 — PRESENT</span><span className="career-current">CURRENT CHAPTER</span></div>
+          <div className="career-chapter-top"><span className="career-dates">NOV 2025 — PRESENT</span><span className="career-current">PRESENT</span></div>
           <h3>Blocksbridge Consulting</h3>
           <p className="career-role">AI Full-Stack Engineer</p>
           <span className="career-location">Remote · New York, USA</span>
@@ -41,7 +40,7 @@ export default function Experience() {
           <a className="text-link career-project-link" href="https://quoril.in" target="_blank" rel="noreferrer">Meet Quoril</a>
         </Reveal>
         <Reveal className="career-entry career-chapter">
-          <div className="career-chapter-top"><span className="career-dates">JAN — OCT 2025</span><span className="career-chapter-number">THE PREVIOUS CHAPTER</span></div>
+          <div className="career-chapter-top"><span className="career-dates">JAN — OCT 2025</span><span className="career-chapter-number">PREVIOUSLY</span></div>
           <h3>Drishya AI Labs</h3>
           <p className="career-role">Junior Software Engineer</p>
           <span className="career-location">Vizianagaram, India</span>

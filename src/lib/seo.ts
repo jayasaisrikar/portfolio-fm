@@ -10,15 +10,15 @@ export const indexedPaths = ['/', '/profile'] as const;
 export function getPageMeta(path: string) {
   if (path === '/') return {
     title: 'Jaya Sai Srikar (Jay) | AI Engineer',
-    description: 'Jaya Sai Srikar (Jay / Srikar) is an AI engineer and full-stack developer from Vizag, India. Explore FORK, Crosswake, Quoril, AI agents, and production work.',
+    description: 'Jaya Sai Srikar (Jay / Srikar) is an AI engineer and full-stack developer from Vizag, India. Explore Outspool, Crosswake, FORK, Quoril, and production AI systems.',
     canonical: `${site.url}/`, indexed: true,
   };
   if (path === '/profile') return {
     title: 'About Jaya Sai Srikar | AI Engineer & Builder',
-    description: 'Meet Jaya Sai Srikar (Jay), an AI engineer based in Vizag, India. Background, technical toolkit, recognition, films, and field notes.',
+    description: 'Meet Jaya Sai Srikar (Jay), an AI engineer based in Vizag, India. Background, technical toolkit, recognition, films, and life outside the work.',
     canonical: `${site.url}/profile`, indexed: true,
   };
-  return { title: 'Page not found | Jaya Sai Srikar', description: 'This page could not be found. Explore Jay’s portfolio and personal notebook.', canonical: '', indexed: false };
+  return { title: 'Page not found | Jaya Sai Srikar', description: 'This page could not be found. Explore Jay’s portfolio and personal profile.', canonical: '', indexed: false };
 }
 export function structuredData(path: string) {
   if (!getPageMeta(path).indexed) return null;
@@ -48,7 +48,7 @@ export function structuredData(path: string) {
     ...(path === '/profile' ? { breadcrumb: { '@id': `${meta.canonical}#breadcrumb` } } : {}),
   };
   const graph: Record<string, unknown>[] = [
-    { '@type': 'WebSite', '@id': siteId, url: `${site.url}/`, name: 'Jaya Sai Srikar — Personal Portfolio', alternateName: 'Jay’s field notes', inLanguage: 'en', publisher: { '@id': personId } },
+    { '@type': 'WebSite', '@id': siteId, url: `${site.url}/`, name: 'Jaya Sai Srikar — Personal Portfolio', alternateName: 'Jay — Engineering with intent', inLanguage: 'en', publisher: { '@id': personId } },
     person,
     { '@type': 'Organization', '@id': quorilId, name: 'Quoril', url: 'https://quoril.in', founder: { '@id': personId }, description: 'An offline-first productivity desktop app for macOS and Windows.' },
     { '@type': 'Organization', '@id': blocksbridgeId, name: 'Blocksbridge Consulting' },

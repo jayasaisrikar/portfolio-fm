@@ -1,0 +1,383 @@
+### Page
+- Page URL: http://localhost:3001/
+- Page Title: Jaya Sai Srikar (Jay) | AI Engineer
+### Snapshot
+```yaml
+- generic [ref=f3e3]:
+  - link "Skip to content" [ref=f3e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f3e5]:
+    - generic [ref=f3e6]:
+      - link "Jaya Sai Srikar — home" [ref=f3e7] [cursor=pointer]:
+        - /url: /
+        - text: jay.
+      - generic [ref=f3e8]: ENGINEER & BUILDER
+      - navigation "Primary navigation" [ref=f3e9]:
+        - link "Work" [ref=f3e10] [cursor=pointer]:
+          - /url: /#projects
+        - link "About" [ref=f3e11] [cursor=pointer]:
+          - /url: /profile
+        - link "Let’s talk" [ref=f3e12] [cursor=pointer]:
+          - /url: mailto:bjayasaisrikar2004@gmail.com
+  - main [ref=f3e16]:
+    - generic [ref=f3e17]:
+      - generic [ref=f3e20]:
+        - generic [ref=f3e21]:
+          - generic [ref=f3e22]: JAYA SAI SRIKAR
+          - generic [ref=f3e23]: BASED IN VIZAG, INDIA ↗
+        - heading "Engineering, with intent." [level=1] [ref=f3e24]: Engineering,with intent.
+        - generic [ref=f3e25]:
+          - generic [aria-hidden] [ref=f3e26]: ✳
+          - paragraph [ref=f3e27]: I turn complex ideas into software that works. AI systems, thoughtful products, and the infrastructure that holds it all together.
+        - generic [ref=f3e28]:
+          - link [ref=f3e29] [cursor=pointer]:
+            - /url: "#projects"
+          - generic [ref=f3e33]:
+            - text: AI Full-Stack Engineer · Blocksbridge
+            - link "Co-founder · Quoril" [ref=f3e34] [cursor=pointer]:
+              - /url: https://quoril.in
+          - generic [ref=f3e38]: INDEPENDENT MIND.END-TO-END ENGINEER.
+      - generic [aria-hidden] [ref=f3e39]: A LITTLE CURIOSITY GOES A LONG WAY
+    - generic [ref=f3e40]:
+      - generic [ref=f3e41]:
+        - generic [ref=f3e42]:
+          - text: SELECTED WORK / 2025—26
+          - heading "Built from curiosity." [level=2] [ref=f3e43]: Built fromcuriosity.
+        - generic [ref=f3e44]:
+          - paragraph [ref=f3e45]: Independent products. Uncomfortable questions.Ideas taken all the way to working software.
+          - link "Explore GitHub" [ref=f3e46] [cursor=pointer]:
+            - /url: https://github.com/jayasaisrikar
+      - generic [ref=f3e50]:
+        - article [ref=f3e51]:
+          - link "Explore Outspool" [ref=f3e52] [cursor=pointer]:
+            - /url: https://github.com/jayasaisrikar/outspool
+            - generic [aria-hidden] [ref=f3e53]:
+              - generic [ref=f3e54]: SIGNAL → CONNECTION
+              - generic [ref=f3e65]: outspool
+            - generic [ref=f3e70]: CURRENTLY BUILDING
+          - generic [ref=f3e72]:
+            - heading "Outspool" [level=3] [ref=f3e73]
+            - generic [ref=f3e74]: 01 / WORK IN PROGRESS
+          - paragraph [ref=f3e75]: From a company’s website to the right conversation. Self-hosted outbound with an AI copilot, your own models, and a human in control.
+          - generic [ref=f3e76]:
+            - generic [ref=f3e77]: TypeScript / React / Hono
+            - link "Outspool source code" [ref=f3e79] [cursor=pointer]:
+              - /url: https://github.com/jayasaisrikar/outspool
+              - text: Source
+          - group [ref=f3e83]:
+            - generic "Behind the build +" [ref=f3e84] [cursor=pointer]:
+              - text: Behind the build
+              - generic [ref=f3e85]: +
+        - article [ref=f3e86]:
+          - link "Explore Crosswake" [ref=f3e87] [cursor=pointer]:
+            - /url: https://project-crosswake.vercel.app/
+            - generic [aria-hidden] [ref=f3e88]:
+              - generic [ref=f3e89]: FIND THE SIGNAL.
+              - generic [ref=f3e111]: crosswake
+              - generic [ref=f3e112]: CONCEPT STUDY
+          - generic [ref=f3e117]:
+            - heading "Crosswake" [level=3] [ref=f3e118]
+            - generic [ref=f3e119]: 02 / INDEPENDENT PROJECT
+          - paragraph [ref=f3e120]: Market data you can replay. Research you can question. A platform for causal backtests and auditable paper signals.
+          - generic [ref=f3e121]:
+            - generic [ref=f3e122]: TypeScript / Next.js / Mastra
+            - generic [ref=f3e123]:
+              - link "Crosswake source code" [ref=f3e124] [cursor=pointer]:
+                - /url: https://github.com/jayasaisrikar/project-crosswake
+                - text: Source
+              - link "Visit Crosswake" [ref=f3e128] [cursor=pointer]:
+                - /url: https://project-crosswake.vercel.app/
+                - text: Visit
+          - group [ref=f3e132]:
+            - generic "Behind the build +" [ref=f3e133] [cursor=pointer]:
+              - text: Behind the build
+              - generic [ref=f3e134]: +
+        - article [ref=f3e135]:
+          - link "Explore FORK" [ref=f3e136] [cursor=pointer]:
+            - /url: https://fork-dun.vercel.app/
+            - generic [aria-hidden] [ref=f3e137]:
+              - generic [ref=f3e138]: SIMULATE. APPROVE. EXECUTE.
+              - generic [ref=f3e145]: FORK
+              - generic [ref=f3e146]: CONCEPT STUDY
+          - generic [ref=f3e151]:
+            - heading "FORK" [level=3] [ref=f3e152]
+            - generic [ref=f3e153]: 03 / INDEPENDENT PROJECT
+          - paragraph [ref=f3e154]: A deliberate pause between an agent’s proposal and its action. Simulate the options, approve one plan, trace every decision.
+          - generic [ref=f3e155]:
+            - generic [ref=f3e156]: TypeScript / Next.js / Hono
+            - generic [ref=f3e157]:
+              - link "FORK source code" [ref=f3e158] [cursor=pointer]:
+                - /url: https://github.com/jayasaisrikar/fork
+                - text: Source
+              - link "Visit FORK" [ref=f3e162] [cursor=pointer]:
+                - /url: https://fork-dun.vercel.app/
+                - text: Visit
+          - group [ref=f3e166]:
+            - generic "Behind the build +" [ref=f3e167] [cursor=pointer]:
+              - text: Behind the build
+              - generic [ref=f3e168]: +
+        - article [ref=f3e169]:
+          - link "Explore Quoril" [ref=f3e170] [cursor=pointer]:
+            - /url: https://quoril.in
+            - generic [aria-hidden] [ref=f3e171]:
+              - generic [ref=f3e172]: SPACE TO FOCUS.
+              - generic [ref=f3e173]: q.
+              - generic [ref=f3e181]: quoril
+              - generic [ref=f3e182]: CONCEPT STUDY
+          - generic [ref=f3e187]:
+            - heading "Quoril" [level=3] [ref=f3e188]
+            - generic [ref=f3e189]: 04 / CO-FOUNDER
+          - paragraph [ref=f3e190]: A quieter place to get things done. An offline-first desktop workspace for tasks, focus, and the rhythm of a working day.
+          - generic [ref=f3e191]:
+            - generic [ref=f3e192]: React / Electron / SQLite
+            - link "Visit Quoril" [ref=f3e194] [cursor=pointer]:
+              - /url: https://quoril.in
+              - text: Visit
+          - group [ref=f3e198]:
+            - generic "Behind the build +" [ref=f3e199] [cursor=pointer]:
+              - text: Behind the build
+              - generic [ref=f3e200]: +
+      - generic [ref=f3e201]:
+        - generic [ref=f3e202]: MORE EXPLORATIONS
+        - link "On-Chain Analysis Agent ADK-TS 2025 · TRACK WINNER" [ref=f3e203] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/on-chain-analysis-agent
+          - generic [ref=f3e204]: On-Chain Analysis Agent
+          - generic [ref=f3e205]: ADK-TS 2025 · TRACK WINNER
+        - link "Statistical Arbitrage QUANT RESEARCH" [ref=f3e209] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/stat-arb
+          - generic [ref=f3e210]: Statistical Arbitrage
+          - generic [ref=f3e211]: QUANT RESEARCH
+        - link "AI Code Architecture Agent DEVELOPER TOOLS" [ref=f3e215] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/spoc-agent
+          - generic [ref=f3e216]: AI Code Architecture Agent
+          - generic [ref=f3e217]: DEVELOPER TOOLS
+        - link "GridFlex ENERGY SYSTEMS" [ref=f3e221] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/gridflex
+          - generic [ref=f3e222]: GridFlex
+          - generic [ref=f3e223]: ENERGY SYSTEMS
+    - generic [ref=f3e228]:
+      - generic [ref=f3e229]:
+        - img "Ocean waves under soft coastal light" [ref=f3e230]
+        - generic [ref=f3e231]: BY THE COAST. ALWAYS CURIOUS.
+      - generic [ref=f3e232]:
+        - text: THE PERSON BEHIND THE PROJECTS
+        - heading "Depth in the work. Room to wander." [level=2] [ref=f3e233]: Depth in the work.Room to wander.
+        - paragraph [ref=f3e234]: I’m Jay — an engineer, co-founder, and curious person from Vizag, on India’s east coast.
+        - paragraph [ref=f3e235]: "I enjoy the messy space between an idea and something useful. My work moves between AI agents, market research, and product engineering. The thread is the same: understand the problem, care about the details, and build it properly."
+        - paragraph [ref=f3e236]: "Away from the keyboard: good films, new places, and the occasional Star Wars rabbit hole."
+        - link "A little more about me" [ref=f3e237] [cursor=pointer]:
+          - /url: /profile
+    - generic [ref=f3e241]:
+      - generic [ref=f3e242]:
+        - text: EXPERIENCE
+        - heading "Good ideas. Real experience." [level=2] [ref=f3e243]: Good ideas.Real experience.
+        - paragraph [ref=f3e244]: Co-founding Quoril, building engineering copilots, and shipping publishing pipelines and event platforms. Here’s where I’ve been putting the pieces together.
+      - generic [ref=f3e245]:
+        - generic [ref=f3e246]:
+          - generic [ref=f3e247]:
+            - generic [ref=f3e248]: NOV 2025 — PRESENT
+            - generic [ref=f3e249]: PRESENT
+          - heading "Blocksbridge Consulting" [level=3] [ref=f3e250]
+          - paragraph [ref=f3e251]: AI Full-Stack Engineer
+          - generic [ref=f3e252]: Remote · New York, USA
+          - paragraph [ref=f3e253]: I build the systems around the story — how energy news becomes researched content, and how an industry event becomes a connected platform.
+          - generic [ref=f3e254]:
+            - generic [ref=f3e255]:
+              - heading "From breaking news to publication" [level=4] [ref=f3e256]
+              - paragraph [ref=f3e257]: Built AI research and publishing harnesses for The Energy Mag, connecting source discovery, feeds, agent-driven research, article generation, and automated publication.
+              - paragraph [ref=f3e258]:
+                - strong [ref=f3e259]: Under 20 seconds
+                - text: from breaking news to a researched, structured article.
+            - generic [ref=f3e260]:
+              - heading "An event platform, end to end" [level=4] [ref=f3e261]
+              - paragraph [ref=f3e262]: "Own the full-stack architecture for Energy Investors Forum 2027: accounts, ticketing, networking, attendee and company directories, meetings, messaging, and admin workflows."
+              - paragraph [ref=f3e263]: Designed authentication, email verification, entitlements, sessions, versioned APIs, and background jobs. Connected Pretix through authenticated webhooks, idempotent sync, reconciliation, and admin recovery paths.
+            - generic [ref=f3e264]:
+              - heading "Keeping production honest" [level=4] [ref=f3e265]
+              - paragraph [ref=f3e266]: Operate Next.js frontends, WordPress, APIs, and Linux/Docker services. Debug feed regressions, data-freshness issues, and stale caches, with integration and lifecycle tests supporting the platform.
+          - generic "Technologies used" [ref=f3e267]:
+            - generic [ref=f3e268]: Next.js
+            - generic [ref=f3e269]: TypeScript
+            - generic [ref=f3e270]: PostgreSQL
+            - generic [ref=f3e271]: Redis / BullMQ
+            - generic [ref=f3e272]: Docker / AWS
+            - generic [ref=f3e273]: Pretix
+          - link "The Energy Mag" [ref=f3e274] [cursor=pointer]:
+            - /url: https://theenergymag.com
+        - generic [ref=f3e275]:
+          - generic [ref=f3e276]:
+            - generic [ref=f3e277]: BUILDING A PRODUCT OF OUR OWN
+            - generic [ref=f3e278]: CO-FOUNDER
+          - heading "Quoril" [level=3] [ref=f3e279]
+          - paragraph [ref=f3e280]: Co-founder
+          - generic [ref=f3e281]: Offline-first productivity · macOS & Windows
+          - paragraph [ref=f3e282]: "Co-founding Quoril means taking the product from an idea to something people can use: a quieter place for tasks, focus sessions, activity analysis, and workspaces."
+          - generic [ref=f3e283]:
+            - generic [ref=f3e284]:
+              - heading "Building the product, not just a feature" [level=4] [ref=f3e285]
+              - paragraph [ref=f3e286]: Co-founded and built a cross-platform desktop app that brings everyday productivity into one workspace, with local persistence and synchronization.
+            - generic [ref=f3e287]:
+              - heading "Local first, by design" [level=4] [ref=f3e288]
+              - paragraph [ref=f3e289]: Built with React, Electron, and SQLite so the core experience works offline, with synchronization connecting the wider experience.
+          - generic "Technologies used" [ref=f3e290]:
+            - generic [ref=f3e291]: React
+            - generic [ref=f3e292]: Electron
+            - generic [ref=f3e293]: SQLite
+            - generic [ref=f3e294]: Synchronization
+          - link "Meet Quoril" [ref=f3e295] [cursor=pointer]:
+            - /url: https://quoril.in
+        - generic [ref=f3e296]:
+          - generic [ref=f3e297]:
+            - generic [ref=f3e298]: JAN — OCT 2025
+            - generic [ref=f3e299]: PREVIOUSLY
+          - heading "Drishya AI Labs" [level=3] [ref=f3e300]
+          - paragraph [ref=f3e301]: Junior Software Engineer
+          - generic [ref=f3e302]: Vizianagaram, India
+          - paragraph [ref=f3e303]: Worked where industrial engineering meets AI — connecting documents, data, and cloud services so the right information could find its way to the right workflow.
+          - generic [ref=f3e304]:
+            - generic [ref=f3e305]:
+              - heading "A copilot for engineering knowledge" [level=4] [ref=f3e306]
+              - paragraph [ref=f3e307]: Contributed to Junior, Drishya’s agentic engineering copilot, with knowledge-graph-backed workflows that surface relationships across industrial documents and engineering data.
+            - generic [ref=f3e308]:
+              - heading "Connecting the platform" [level=4] [ref=f3e309]
+              - paragraph [ref=f3e310]: Developed TypeScript and Python cloud-adapter libraries, plus Django backend services integrating data sources, APIs, and platform services for AI and industrial analytics.
+            - generic [ref=f3e311]:
+              - heading "Making deployment repeatable" [level=4] [ref=f3e312]
+              - paragraph [ref=f3e313]: Built infrastructure with Terraform and contributed to the Azure/Kubernetes migration, authoring manifests and containerizing services. Automated builds and deployments with GitHub Actions, Docker, and Azure AKS.
+              - paragraph [ref=f3e314]:
+                - strong [ref=f3e315]: 90% less deployment time
+                - text: compared with the previous manual process.
+          - generic "Technologies used" [ref=f3e316]:
+            - generic [ref=f3e317]: TypeScript / Python
+            - generic [ref=f3e318]: Django
+            - generic [ref=f3e319]: Knowledge graphs
+            - generic [ref=f3e320]: Terraform
+            - generic [ref=f3e321]: Azure AKS
+            - generic [ref=f3e322]: GitHub Actions
+        - generic [ref=f3e323]:
+          - text: WHERE IT STARTED
+          - heading "B.Tech, Information Technology" [level=3] [ref=f3e324]
+          - paragraph [ref=f3e325]: JNTU-GV · 2021–2025 · CGPA 8.24
+          - paragraph [ref=f3e326]: Secretary, ACM Student Chapter · Team Lead, SIH 2023 Grand Finalist
+    - generic [ref=f3e328]:
+      - generic [ref=f3e329]:
+        - text: FORK / A TINY HANDS-ON EXAMPLE
+        - heading "What would you let an agent do?" [level=2] [ref=f3e330]: What would youlet an agent do?
+        - paragraph [ref=f3e331]: "Try the idea behind FORK: a proposal is a starting point. Simulate it, check the rules, and let a person make the call."
+        - generic [ref=f3e332]: You’re the human in the loop.
+        - paragraph [ref=f3e333]: Illustrative browser-only demo. Fictional credits, fixed sample plans. No AI calls, signed intents, or real payments.
+        - link "Explore the full FORK project" [ref=f3e334] [cursor=pointer]:
+          - /url: https://fork-dun.vercel.app/
+      - generic [ref=f3e335]:
+        - generic [ref=f3e336]:
+          - generic [ref=f3e337]: SAMPLE LEDGER
+          - strong [ref=f3e338]: 1,000 credits
+        - group "1. Pick an agent’s proposed plan" [ref=f3e339]:
+          - generic [ref=f3e341] [cursor=pointer]:
+            - radio "Keep a buffer A small allocation that keeps the reserve intact. 200" [checked] [ref=f3e342]
+            - generic [ref=f3e343]:
+              - strong [ref=f3e344]: Keep a buffer
+              - generic [ref=f3e345]: A small allocation that keeps the reserve intact.
+            - generic [ref=f3e346]: "200"
+          - generic [ref=f3e347] [cursor=pointer]:
+            - radio "Take a bigger step A valid amount, but it exceeds the demo’s approval policy. 500" [ref=f3e348]
+            - generic [ref=f3e349]:
+              - strong [ref=f3e350]: Take a bigger step
+              - generic [ref=f3e351]: A valid amount, but it exceeds the demo’s approval policy.
+            - generic [ref=f3e352]: "500"
+          - generic [ref=f3e353] [cursor=pointer]:
+            - radio "Go all in (and then some) An amount the sample ledger cannot cover. 1,200" [ref=f3e354]
+            - generic [ref=f3e355]:
+              - strong [ref=f3e356]: Go all in (and then some)
+              - generic [ref=f3e357]: An amount the sample ledger cannot cover.
+            - generic [ref=f3e358]: 1,200
+        - generic [ref=f3e359]:
+          - button "2. Simulate the plan" [ref=f3e360] [cursor=pointer]
+          - button "Start over" [ref=f3e361] [cursor=pointer]
+    - generic [ref=f3e363]:
+      - generic [ref=f3e364]:
+        - generic [ref=f3e365]:
+          - text: THE OPEN WORKBENCH
+          - heading "Always a work in progress." [level=2] [ref=f3e366]: Always awork in progress.
+        - generic [ref=f3e367]:
+          - paragraph [ref=f3e368]: Recently pushed public repositories.
+          - generic [ref=f3e369]: Checked 21 Oct 2026
+      - generic [ref=f3e370]:
+        - link "01 outspool An experiment from my public workbench. TypeScript Pushed 21 Oct 2026 0 stars" [ref=f3e371] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/outspool
+          - generic [ref=f3e372]: "01"
+          - generic [ref=f3e373]:
+            - heading "outspool" [level=3] [ref=f3e374]
+            - paragraph [ref=f3e375]: An experiment from my public workbench.
+            - generic [ref=f3e376]:
+              - generic [ref=f3e377]: TypeScript
+              - generic [ref=f3e378]: Pushed 21 Oct 2026
+              - generic [ref=f3e379]: 0 stars
+          - generic [aria-hidden] [ref=f3e380]: ↗
+        - link "02 project crosswake An experiment from my public workbench. TypeScript Pushed 20 Oct 2026 0 stars" [ref=f3e381] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/project-crosswake
+          - generic [ref=f3e382]: "02"
+          - generic [ref=f3e383]:
+            - heading "project crosswake" [level=3] [ref=f3e384]
+            - paragraph [ref=f3e385]: An experiment from my public workbench.
+            - generic [ref=f3e386]:
+              - generic [ref=f3e387]: TypeScript
+              - generic [ref=f3e388]: Pushed 20 Oct 2026
+              - generic [ref=f3e389]: 0 stars
+          - generic [aria-hidden] [ref=f3e390]: ↗
+        - link "03 gridflex An experiment from my public workbench. TypeScript Pushed 20 Oct 2026 0 stars" [ref=f3e391] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/gridflex
+          - generic [ref=f3e392]: "03"
+          - generic [ref=f3e393]:
+            - heading "gridflex" [level=3] [ref=f3e394]
+            - paragraph [ref=f3e395]: An experiment from my public workbench.
+            - generic [ref=f3e396]:
+              - generic [ref=f3e397]: TypeScript
+              - generic [ref=f3e398]: Pushed 20 Oct 2026
+              - generic [ref=f3e399]: 0 stars
+          - generic [aria-hidden] [ref=f3e400]: ↗
+        - link "04 crosswake signal log Append-only, hash-chained log of every Crosswake paper signal JavaScript Pushed 18 Oct 2026 0 stars" [ref=f3e401] [cursor=pointer]:
+          - /url: https://github.com/jayasaisrikar/crosswake-signal-log
+          - generic [ref=f3e402]: "04"
+          - generic [ref=f3e403]:
+            - heading "crosswake signal log" [level=3] [ref=f3e404]
+            - paragraph [ref=f3e405]: Append-only, hash-chained log of every Crosswake paper signal
+            - generic [ref=f3e406]:
+              - generic [ref=f3e407]: JavaScript
+              - generic [ref=f3e408]: Pushed 18 Oct 2026
+              - generic [ref=f3e409]: 0 stars
+          - generic [aria-hidden] [ref=f3e410]: ↗
+      - link "More on GitHub" [ref=f3e411] [cursor=pointer]:
+        - /url: https://github.com/jayasaisrikar
+    - generic [ref=f3e412]:
+      - text: A CONSTANT THROUGH ALL OF IT
+      - paragraph [ref=f3e413]: Stay curious.Make things that matter.
+      - link "Outside the work" [ref=f3e414] [cursor=pointer]:
+        - /url: /profile
+  - contentinfo [ref=f3e418]:
+    - generic [ref=f3e419]:
+      - generic [ref=f3e420]:
+        - generic [ref=f3e421]: HAVE SOMETHING IN MIND?
+        - generic [ref=f3e422]: LET’S MAKE IT REAL.
+      - link "Good things start with a conversation." [ref=f3e423] [cursor=pointer]:
+        - /url: mailto:bjayasaisrikar2004@gmail.com
+        - text: Good things startwith a conversation.
+      - generic [ref=f3e427]:
+        - link "bjayasaisrikar2004@gmail.com" [ref=f3e428] [cursor=pointer]:
+          - /url: mailto:bjayasaisrikar2004@gmail.com
+        - button "Copy email address" [ref=f3e429] [cursor=pointer]
+        - status
+      - generic [ref=f3e433]:
+        - link "Back to top" [ref=f3e434] [cursor=pointer]:
+          - /url: "#main-content"
+          - text: jay.
+        - generic [ref=f3e435]: Thoughtfully built, from Vizag.
+        - generic [ref=f3e436]:
+          - link "GitHub" [ref=f3e437] [cursor=pointer]:
+            - /url: https://github.com/jayasaisrikar
+          - link "Twitter / X" [ref=f3e441] [cursor=pointer]:
+            - /url: https://x.com/jayasaisrikar
+          - link "Quoril" [ref=f3e445] [cursor=pointer]:
+            - /url: https://quoril.in
+        - generic [ref=f3e449]: © 2026
+```

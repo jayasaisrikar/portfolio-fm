@@ -1,1 +1,38 @@
-[{"date":"2026-10-17","scope":"app","macrostructure":"Split Studio","theme":"custom","theme_axes":"light / display-heavy / cool","vibe":"personal paper notebook, blue ink, sketches","nav":"N6 compact masthead","footer":"Ft6 letter close","enrichment":"hand-built SVG idea machine and project diagrams","brief":"Complete personal portfolio rebuild; field notebook direction selected by user."}]
+[
+  {
+    "date": "2026-10-17",
+    "scope": "app",
+    "macrostructure": "Split Studio",
+    "theme": "custom",
+    "theme_axes": "light / display-heavy / cool",
+    "vibe": "personal paper notebook, blue ink, sketches",
+    "nav": "N6 compact masthead",
+    "footer": "Ft6 letter close",
+    "enrichment": "hand-built SVG idea machine and project diagrams",
+    "brief": "Complete personal portfolio rebuild; field notebook direction selected by user."
+  },
+  {
+    "date": "2026-10-21",
+    "scope": "app",
+    "macrostructure": "Portfolio Grid",
+    "theme": "custom coastal silver",
+    "theme_axes": "ivory / charcoal / muted forest",
+    "vibe": "minimal premium professional, photographic depth",
+    "nav": "N9 edge minimal",
+    "footer": "Ft5 statement",
+    "enrichment": "local ocean photograph, CSS dimensional project sculptures, GSAP ScrollTrigger",
+    "brief": "Full portfolio redesign with parallax and 3D motion; resume and Outspool incorporated."
+  },
+  {
+    "date": "2026-11-12",
+    "scope": "app",
+    "macrostructure": "magazine spread",
+    "theme": "Halftone Press",
+    "theme_axes": "newsprint / press blue key / press red spot / steel screen",
+    "vibe": "mid-century two-colour offset lithography, cut-paper spot illustrations",
+    "nav": "N1 ruled masthead",
+    "footer": "Ft1 ink flood colophon",
+    "enrichment": "six original SVG spot illustrations, halftone dot screens, registration offsets, duotone halftone photographs",
+    "brief": "Apply the Halftone Press taste pack: newsprint #F5F0E6, press blue #1D3557, press red #E63946, steel #457B9D, with mid-century magazine spot illustrations."
+  }
+]

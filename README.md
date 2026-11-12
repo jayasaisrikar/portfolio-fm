@@ -26,7 +26,7 @@ The graph describes the Person, WebSite, WebPage/ProfilePage, Quoril founder rel
 
 `public/llms.txt` is a supplemental reading guide, not an established ranking requirement or a guarantee of AI citations. Maintain it when public roles or projects change. Google’s AI search guidance uses ordinary SEO fundamentals; no special AI schema is required. The wildcard robots rule permits search crawlers, including AI search crawlers, to access the public pages. CDN/WAF policies can still block them independently.
 
-The social card is a committed 1200×630 PNG; its editable vector source is `public/social-card.svg`. Update both together. No resume asset is published.
+The social card is a committed 1200×630 PNG; its editable HTML source is `scripts/social-card.html`. Re-render it with `scripts/render-social-card.sh` after updating the design. No resume asset is published.
 
 ## After deployment
 
